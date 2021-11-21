@@ -1,0 +1,10 @@
+*.log
+*.log.*
+
+*.db
+*.db-shm
+*.db-wal
+
+.cloud
+.storage
+custom_components

@@ -1,0 +1,240 @@
+views:
+  - title: Home
+    icon: mdi:home-circle
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+            - type: custom:mini-media-player
+              entity: media_player.sony_bravia_tv
+              artwork: cover
+              source: icon
+              info: scroll
+              volume_stateless: true
+              group: true
+              idle_view:
+                when_idle: true
+                when_standby: true
+            - type: custom:mini-media-player
+              entity: media_player.ht_z9f
+              artwork: cover
+              source: icon
+              info: scroll
+              toggle_power: false
+              volume_stateless: true
+              group: true
+              idle_view:
+                when_idle: true
+                when_standby: true
+              hide:
+                volume: true
+                controls: true
+                power: true
+          - type: horizontal-stack
+            cards:
+              - type: entities
+                show_header_toggle: false
+                state_color: true
+                entities:
+                  - script.good_morning
+                  - script.good_night
+                  - script.home
+                  - script.leaving
+                  - script.feeling_high
+                  - script.movie_time
+                  - script.1592682876227
+                  - script.1593284496702
+                  - script.1593284468001
+                  - script.1629140590814
+                  - script.tv_input_turnable
+              - type: entities
+                show_header_toggle: false
+                state_color: true
+                entities:
+                  - light.floor_lamp_left
+                  - light.floor_lamp_right
+                  - light.hue_play_left
+                  - light.hue_play_right
+                  - light.desk_lamp
+                  - light.hue_ambiance_lamp_2
+                  - light.ceiling_light_inner
+                  - light.ceiling_light_outer
+                  - light.lightstrip
+                  - light.gateway_light_34ce00837eef
+                  - switch.koogeek_p1_6c79c0
+                  - switch.adguard_filtering
+
+      - type: vertical-stack
+        cards:
+          - type: weather-forecast
+            entity: weather.living_room
+          - type: custom:simple-thermostat
+            entity: climate.living_room
+            header: false
+            hide:
+              temperature: true
+              state: true
+            layout:
+              mode:
+                names: false
+                headings: false
+                icons: true
+            control:
+              preset:
+                'Home':
+                  icon: mdi:home-import-outline
+                'Away':
+                  icon: mdi:home-export-outline
+                'Sleep':
+                  icon: mdi:power-sleep
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.illumination_34ce00837eef
+            smoothing: false
+            hours_to_show: 24
+            points_per_hour: 12
+            hour24: true
+            line_width: 2
+            height: 175
+            color_thresholds:
+              - value: 0
+                color: "#786AAB"
+              - value: 200
+                color: "#DECB9C"
+              - value: 400
+                color: "#EEE0C5"
+              - value: 600
+                color: "#FEAB1D"
+              - value: 800
+                color: "#FF7D08"
+              - value: 1000
+                color: "#FD6400"
+
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.living_room_temperature
+                    name: Living Room
+                    show_state: true
+                    state_adaptive_color: true
+                    show_fill: false
+                    color: "#fcb137"
+                  - entity: sensor.temperature_158d0001a2b637
+                    name: Bedroom
+                    show_state: true
+                    state_adaptive_color: true
+                    show_fill: false
+                  - entity: sensor.temperature_158d00015813fd
+                    name: Entrance
+                    show_state: true
+                    state_adaptive_color: true
+                    show_fill: false
+                  - entity: sensor.target_temperature
+                    name: Target
+                    show_state: false
+                    state_adaptive_color: true
+                    show_fill: false
+                  - entity: sensor.hvac_action
+                    y_axis: secondary
+                    name: HVAC
+                    show_state: false
+                    state_adaptive_color: true
+                    show_fill: false
+                  - entity: sensor.fan_action
+                    y_axis: secondary
+                    name: Fan
+                    show_state: false
+                    state_adaptive_color: true
+                    show_fill: false
+                name: Temperature
+                hours_to_show: 24
+                points_per_hour: 12
+                line_width: 2
+                hour24: true
+                height: 110
+                state_map:
+                  - value: "Off"
+                  - value: "On"
+                  - value: "Cooling"
+                  - value: "Idle"
+                  - value: "Heating"
+                lower_bound: 17
+                upper_bound_secondary: 30
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.living_room_humidity
+                    name: Living Room
+                    show_state: true
+                    state_adaptive_color: true
+                    show_fill: false
+                    color: "#fcb137"
+                  - entity: sensor.humidity_158d0001a2b637
+                    name: Bedroom
+                    show_state: true
+                    state_adaptive_color: true
+                    show_fill: false
+                  - entity: sensor.humidity_158d00015813fd
+                    name: Entrance
+                    show_state: true
+                    state_adaptive_color: true
+                    show_fill: false
+                name: Humidity
+                hours_to_show: 24
+                points_per_hour: 12
+                line_width: 2
+                hour24: true
+                height: 110
+          - type: custom:mini-graph-card
+            entities:
+              - entity: binary_sensor.motion_sensor_158d00015b8344
+                color: "#fcb137"
+              - entity: binary_sensor.door_window_sensor_158d000125cd3f
+            name: Motion & Door
+            hours_to_show: 24
+            points_per_hour: 12
+            aggregate_func: max
+            line_width: 2
+            height: 17
+            state_map:
+              - value: "off"
+                label: "Clear"
+              - value: "on"
+                label: "Alert"
+
+  - title: Updater
+    icon: mdi:arrow-up-bold-circle
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entity
+            entity: binary_sensor.updater
+          - type: entity
+            entity: sensor.hacs
+          - type: entities
+            show_header_toggle: false
+            state_color: true
+            entities:
+              - sensor.speedtest_download
+              - sensor.speedtest_upload
+              - sensor.speedtest_ping
+          - type: entities
+            show_header_toggle: false
+            state_color: true
+            entities:
+              - sensor.canon_ts3400_series_black
+              - sensor.canon_ts3400_series_color
+          - type: entities
+            show_header_toggle: false
+            state_color: true
+            entities:
+              - sensor.battery_158d0001839557
+              - sensor.battery_158d000125cd3f
+              - sensor.battery_158d00015b8344
+              - sensor.battery_158d00015813fd
+              - sensor.battery_158d0001a2b637

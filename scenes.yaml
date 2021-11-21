@@ -1,0 +1,2010 @@
+- id: '1606097710069'
+  name: 'Night Time: Scene 1'
+  entities:
+    light.floor_lamp_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 23.67
+      - 85.49
+      rgb_color:
+      - 255
+      - 123
+      - 37
+      xy_color:
+      - 0.608
+      - 0.363
+      effect: none
+      friendly_name: Floor Lamp Left
+      icon: mdi:floor-lamp
+      supported_features: 63
+      state: 'on'
+    light.floor_lamp_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 223
+      hs_color:
+      - 25.091
+      - 86.275
+      rgb_color:
+      - 255
+      - 126
+      - 34
+      xy_color:
+      - 0.606
+      - 0.367
+      effect: none
+      friendly_name: Floor Lamp Right
+      icon: mdi:floor-lamp
+      supported_features: 63
+      state: 'on'
+    light.hue_play_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 204
+      hs_color:
+      - 219.655
+      - 68.235
+      rgb_color:
+      - 81
+      - 140
+      - 255
+      xy_color:
+      - 0.17
+      - 0.163
+      effect: none
+      friendly_name: TV Light Left
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'on'
+    light.hue_play_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 204
+      hs_color:
+      - 314.769
+      - 76.471
+      rgb_color:
+      - 255
+      - 59
+      - 207
+      xy_color:
+      - 0.445
+      - 0.198
+      effect: none
+      friendly_name: TV Light Right
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'on'
+    light.ceiling_light_inner:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 210
+      hs_color:
+      - 262.247
+      - 34.902
+      rgb_color:
+      - 198
+      - 165
+      - 255
+      xy_color:
+      - 0.288
+      - 0.222
+      effect: none
+      friendly_name: Hallway Ceiling Light 1
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'on'
+    light.ceiling_light_outer:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 200
+      hs_color:
+      - 27.64
+      - 69.804
+      rgb_color:
+      - 255
+      - 158
+      - 76
+      xy_color:
+      - 0.544
+      - 0.385
+      effect: none
+      friendly_name: Hallway Ceiling Light 2
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'on'
+    light.hue_ambiance_lamp_1:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 204
+      color_temp: 400
+      friendly_name: Kitchen Ceiling Light 1
+      supported_features: 43
+      state: 'on'
+    light.hue_ambiance_lamp_2:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 204
+      color_temp: 400
+      friendly_name: Kitchen Ceiling Light 2
+      supported_features: 43
+      state: 'on'
+    light.desk_lamp:
+      min_mireds: 250
+      max_mireds: 666
+      effect_list:
+      - effect_pulse
+      - effect_stop
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 230
+      color_temp: 408
+      friendly_name: Desk Lamp
+      icon: mdi:desk-lamp
+      supported_features: 39
+      state: 'on'
+    light.lightstrip:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 28.525
+      - 47.843
+      rgb_color:
+      - 255
+      - 191
+      - 133
+      xy_color:
+      - 0.462
+      - 0.379
+      color_temp: 250
+      flowing: false
+      music_mode: false
+      friendly_name: Lightstrip
+      icon: mdi:led-strip-variant
+      supported_features: 63
+      state: 'on'
+- id: '1606097816358'
+  name: 'Night Time: Scene 2'
+  entities:
+    light.ceiling_light_inner:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 200
+      hs_color:
+      - 48.8
+      - 29.412
+      rgb_color:
+      - 255
+      - 240
+      - 179
+      xy_color:
+      - 0.385
+      - 0.392
+      effect: none
+      friendly_name: Hallway Ceiling Light 1
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'on'
+    light.ceiling_light_outer:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 200
+      hs_color:
+      - 14.634
+      - 80.392
+      rgb_color:
+      - 255
+      - 99
+      - 50
+      xy_color:
+      - 0.627
+      - 0.336
+      effect: none
+      friendly_name: Hallway Ceiling Light 2
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'on'
+    light.hue_play_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 200
+      hs_color:
+      - 14.634
+      - 80.392
+      rgb_color:
+      - 255
+      - 99
+      - 50
+      xy_color:
+      - 0.627
+      - 0.336
+      effect: none
+      friendly_name: TV Light Left
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'on'
+    light.hue_play_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 200
+      hs_color:
+      - 48.8
+      - 29.412
+      rgb_color:
+      - 255
+      - 240
+      - 179
+      xy_color:
+      - 0.385
+      - 0.392
+      effect: none
+      friendly_name: TV Light Right
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'on'
+    light.floor_lamp_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 200
+      hs_color:
+      - 18.791
+      - 71.373
+      rgb_color:
+      - 255
+      - 129
+      - 72
+      xy_color:
+      - 0.58
+      - 0.355
+      effect: none
+      friendly_name: Floor Lamp Left
+      icon: mdi:floor-lamp
+      supported_features: 63
+      state: 'on'
+    light.floor_lamp_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 200
+      hs_color:
+      - 18.791
+      - 71.373
+      rgb_color:
+      - 255
+      - 129
+      - 72
+      xy_color:
+      - 0.58
+      - 0.355
+      effect: none
+      friendly_name: Floor Lamp Right
+      icon: mdi:floor-lamp
+      supported_features: 63
+      state: 'on'
+    light.desk_lamp:
+      min_mireds: 250
+      max_mireds: 666
+      effect_list:
+      - effect_pulse
+      - effect_stop
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 230
+      color_temp: 408
+      friendly_name: Desk Lamp
+      icon: mdi:desk-lamp
+      supported_features: 39
+      state: 'on'
+    light.lightstrip:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 28.525
+      - 47.843
+      rgb_color:
+      - 255
+      - 191
+      - 133
+      xy_color:
+      - 0.462
+      - 0.379
+      color_temp: 250
+      flowing: false
+      music_mode: false
+      friendly_name: Lightstrip
+      icon: mdi:led-strip-variant
+      supported_features: 63
+      state: 'on'
+    light.hue_ambiance_lamp_1:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 204
+      color_temp: 400
+      friendly_name: Kitchen Ceiling Light 1
+      supported_features: 43
+      state: 'on'
+    light.hue_ambiance_lamp_2:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 204
+      color_temp: 400
+      friendly_name: Kitchen Ceiling Light 2
+      supported_features: 43
+      state: 'on'
+- id: '1606162535813'
+  name: 'Night Time: Scene 3'
+  entities:
+    light.floor_lamp_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 123
+      hs_color:
+      - 28.114
+      - 68.627
+      rgb_color:
+      - 255
+      - 161
+      - 80
+      xy_color:
+      - 0.537
+      - 0.386
+      effect: none
+      friendly_name: Floor Lamp Left
+      icon: mdi:floor-lamp
+      supported_features: 63
+      state: 'on'
+    light.floor_lamp_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 123
+      hs_color:
+      - 323.333
+      - 21.176
+      rgb_color:
+      - 255
+      - 201
+      - 234
+      xy_color:
+      - 0.362
+      - 0.291
+      effect: none
+      friendly_name: Floor Lamp Right
+      icon: mdi:floor-lamp
+      supported_features: 63
+      state: 'on'
+    light.ceiling_light_inner:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 123
+      hs_color:
+      - 262.069
+      - 34.118
+      rgb_color:
+      - 199
+      - 167
+      - 255
+      xy_color:
+      - 0.289
+      - 0.225
+      effect: none
+      friendly_name: Hallway Ceiling Light 1
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'on'
+    light.ceiling_light_outer:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 123
+      hs_color:
+      - 28.114
+      - 68.627
+      rgb_color:
+      - 255
+      - 161
+      - 80
+      xy_color:
+      - 0.537
+      - 0.386
+      effect: none
+      friendly_name: Hallway Ceiling Light 2
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'on'
+    light.hue_play_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 123
+      hs_color:
+      - 28.114
+      - 68.627
+      rgb_color:
+      - 255
+      - 161
+      - 80
+      xy_color:
+      - 0.537
+      - 0.386
+      effect: none
+      friendly_name: TV Light Left
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'on'
+    light.hue_play_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 123
+      hs_color:
+      - 262.069
+      - 34.118
+      rgb_color:
+      - 199
+      - 167
+      - 255
+      xy_color:
+      - 0.289
+      - 0.225
+      effect: none
+      friendly_name: TV Light Right
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'on'
+    light.desk_lamp:
+      min_mireds: 250
+      max_mireds: 666
+      effect_list:
+      - effect_pulse
+      - effect_stop
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 230
+      color_temp: 408
+      friendly_name: Desk Lamp
+      icon: mdi:desk-lamp
+      supported_features: 39
+      state: 'on'
+    light.lightstrip:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 28.525
+      - 47.843
+      rgb_color:
+      - 255
+      - 191
+      - 133
+      xy_color:
+      - 0.462
+      - 0.379
+      color_temp: 250
+      flowing: false
+      music_mode: false
+      friendly_name: Lightstrip
+      icon: mdi:led-strip-variant
+      supported_features: 63
+      state: 'on'
+    light.hue_ambiance_lamp_1:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 191
+      color_temp: 420
+      friendly_name: Kitchen Ceiling Light 1
+      supported_features: 43
+      state: 'on'
+    light.hue_ambiance_lamp_2:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 191
+      color_temp: 420
+      friendly_name: Kitchen Ceiling Light 2
+      supported_features: 43
+      state: 'on'
+- id: '1606162652621'
+  name: 'Night Time: Scene 4'
+  entities:
+    light.ceiling_light_inner:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 179
+      hs_color:
+      - 16.364
+      - 47.451
+      rgb_color:
+      - 255
+      - 167
+      - 133
+      xy_color:
+      - 0.484
+      - 0.351
+      effect: none
+      friendly_name: Hallway Ceiling Light 1
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'on'
+    light.ceiling_light_outer:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 179
+      hs_color:
+      - 340
+      - 38.824
+      rgb_color:
+      - 255
+      - 155
+      - 188
+      xy_color:
+      - 0.432
+      - 0.286
+      effect: none
+      friendly_name: Hallway Ceiling Light 2
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'on'
+    light.floor_lamp_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 30.154
+      - 76.471
+      rgb_color:
+      - 255
+      - 157
+      - 59
+      xy_color:
+      - 0.556
+      - 0.393
+      effect: none
+      friendly_name: Floor Lamp Left
+      icon: mdi:floor-lamp
+      supported_features: 63
+      state: 'on'
+    light.floor_lamp_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 30.154
+      - 76.471
+      rgb_color:
+      - 255
+      - 157
+      - 59
+      xy_color:
+      - 0.556
+      - 0.393
+      effect: none
+      friendly_name: Floor Lamp Right
+      icon: mdi:floor-lamp
+      supported_features: 63
+      state: 'on'
+    light.hue_play_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 334.286
+      - 79.608
+      rgb_color:
+      - 255
+      - 51
+      - 138
+      xy_color:
+      - 0.554
+      - 0.248
+      effect: none
+      friendly_name: TV Light Left
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'on'
+    light.hue_play_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 5.263
+      - 67.059
+      rgb_color:
+      - 255
+      - 98
+      - 83
+      xy_color:
+      - 0.601
+      - 0.318
+      effect: none
+      friendly_name: TV Light Right
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'on'
+    light.desk_lamp:
+      min_mireds: 250
+      max_mireds: 666
+      effect_list:
+      - effect_pulse
+      - effect_stop
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 230
+      color_temp: 408
+      friendly_name: Desk Lamp
+      icon: mdi:desk-lamp
+      supported_features: 39
+      state: 'on'
+    light.lightstrip:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 28.525
+      - 47.843
+      rgb_color:
+      - 255
+      - 191
+      - 133
+      xy_color:
+      - 0.462
+      - 0.379
+      color_temp: 250
+      flowing: false
+      music_mode: false
+      friendly_name: Lightstrip
+      icon: mdi:led-strip-variant
+      supported_features: 63
+      state: 'on'
+    light.hue_ambiance_lamp_1:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 204
+      color_temp: 400
+      friendly_name: Kitchen Ceiling Light 1
+      supported_features: 43
+      state: 'on'
+    light.hue_ambiance_lamp_2:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 204
+      color_temp: 400
+      friendly_name: Kitchen Ceiling Light 2
+      supported_features: 43
+      state: 'on'
+- id: '1621655471185'
+  name: Good Morning
+  entities:
+    light.ceiling_light_inner:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 28.125
+      - 25.098
+      rgb_color:
+      - 255
+      - 221
+      - 191
+      xy_color:
+      - 0.388
+      - 0.357
+      effect: none
+      friendly_name: Hallway Ceiling Light 1
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'on'
+    light.ceiling_light_outer:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 28.125
+      - 25.098
+      rgb_color:
+      - 255
+      - 221
+      - 191
+      xy_color:
+      - 0.388
+      - 0.357
+      effect: none
+      friendly_name: Hallway Ceiling Light 2
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'on'
+    light.hue_ambiance_lamp_1:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 240
+      friendly_name: Kitchen Ceiling Light 1
+      supported_features: 43
+      state: 'on'
+    light.hue_ambiance_lamp_2:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 240
+      friendly_name: Kitchen Ceiling Light 2
+      supported_features: 43
+      state: 'on'
+    light.hue_play_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 338.873
+      - 27.843
+      rgb_color:
+      - 255
+      - 184
+      - 209
+      xy_color:
+      - 0.393
+      - 0.297
+      effect: none
+      friendly_name: TV Light Left
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'on'
+    light.hue_play_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 337.778
+      - 10.588
+      rgb_color:
+      - 255
+      - 228
+      - 238
+      xy_color:
+      - 0.346
+      - 0.316
+      effect: none
+      friendly_name: TV Light Right
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'on'
+    light.lightstrip:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 153
+      hs_color:
+      - 342.353
+      - 13.333
+      rgb_color:
+      - 255
+      - 221
+      - 231
+      xy_color:
+      - 0.355
+      - 0.316
+      color_temp: 250
+      flowing: false
+      music_mode: false
+      friendly_name: Lightstrip
+      icon: mdi:led-strip-variant
+      supported_features: 63
+      state: 'on'
+    light.desk_lamp:
+      min_mireds: 250
+      max_mireds: 666
+      effect_list:
+      - effect_pulse
+      - effect_stop
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 179
+      color_temp: 285
+      friendly_name: Desk Lamp
+      icon: mdi:desk-lamp
+      supported_features: 39
+      state: 'on'
+    light.floor_lamp_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 335.556
+      - 10.588
+      rgb_color:
+      - 255
+      - 228
+      - 239
+      xy_color:
+      - 0.345
+      - 0.315
+      effect: none
+      friendly_name: Floor Lamp Left
+      icon: mdi:floor-lamp
+      supported_features: 63
+      state: 'on'
+    light.floor_lamp_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 335.556
+      - 10.588
+      rgb_color:
+      - 255
+      - 228
+      - 239
+      xy_color:
+      - 0.345
+      - 0.315
+      effect: none
+      friendly_name: Floor Lamp Right
+      icon: mdi:floor-lamp
+      supported_features: 63
+      state: 'on'
+- id: '1621655602987'
+  name: Arrive Home
+  entities:
+    light.ceiling_light_inner:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 29.663
+      - 69.804
+      rgb_color:
+      - 255
+      - 165
+      - 76
+      xy_color:
+      - 0.535
+      - 0.393
+      effect: none
+      friendly_name: Hallway Ceiling Light 1
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'on'
+    light.ceiling_light_outer:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 1.295
+      - 54.51
+      rgb_color:
+      - 255
+      - 118
+      - 115
+      xy_color:
+      - 0.547
+      - 0.314
+      effect: none
+      friendly_name: Hallway Ceiling Light 2
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'on'
+    light.hue_ambiance_lamp_1:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 303
+      friendly_name: Kitchen Ceiling Light 1
+      supported_features: 43
+      state: 'on'
+    light.hue_ambiance_lamp_2:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 303
+      friendly_name: Kitchen Ceiling Light 2
+      supported_features: 43
+      state: 'on'
+    light.hue_play_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 220
+      - 72.941
+      rgb_color:
+      - 69
+      - 131
+      - 255
+      xy_color:
+      - 0.163
+      - 0.149
+      effect: none
+      friendly_name: TV Light Left
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'on'
+    light.hue_play_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 313.981
+      - 80.784
+      rgb_color:
+      - 255
+      - 49
+      - 206
+      xy_color:
+      - 0.449
+      - 0.195
+      effect: none
+      friendly_name: TV Light Right
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'on'
+    light.lightstrip:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 171
+      hs_color:
+      - 28.525
+      - 47.843
+      rgb_color:
+      - 255
+      - 191
+      - 133
+      xy_color:
+      - 0.462
+      - 0.379
+      color_temp: 250
+      flowing: false
+      music_mode: false
+      friendly_name: Lightstrip
+      icon: mdi:led-strip-variant
+      supported_features: 63
+      state: 'on'
+    light.desk_lamp:
+      min_mireds: 250
+      max_mireds: 666
+      effect_list:
+      - effect_pulse
+      - effect_stop
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 369
+      friendly_name: Desk Lamp
+      icon: mdi:desk-lamp
+      supported_features: 39
+      state: 'on'
+    light.floor_lamp_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 31.25
+      - 37.647
+      rgb_color:
+      - 255
+      - 209
+      - 159
+      xy_color:
+      - 0.424
+      - 0.376
+      effect: none
+      friendly_name: Floor Lamp Left
+      icon: mdi:floor-lamp
+      supported_features: 63
+      state: 'on'
+    light.floor_lamp_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 31.25
+      - 37.647
+      rgb_color:
+      - 255
+      - 209
+      - 159
+      xy_color:
+      - 0.424
+      - 0.376
+      effect: none
+      friendly_name: Floor Lamp Right
+      icon: mdi:floor-lamp
+      supported_features: 63
+      state: 'on'
+- id: '1621656289256'
+  name: Movie Time
+  entities:
+    light.ceiling_light_inner:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 76
+      hs_color:
+      - 30
+      - 66.667
+      rgb_color:
+      - 255
+      - 169
+      - 84
+      xy_color:
+      - 0.525
+      - 0.393
+      effect: none
+      friendly_name: Hallway Ceiling Light 1
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'on'
+    light.ceiling_light_outer:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 76
+      hs_color:
+      - 30
+      - 66.667
+      rgb_color:
+      - 255
+      - 169
+      - 84
+      xy_color:
+      - 0.525
+      - 0.393
+      effect: none
+      friendly_name: Hallway Ceiling Light 2
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'on'
+    light.hue_ambiance_lamp_1:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 64
+      color_temp: 420
+      friendly_name: Kitchen Ceiling Light 1
+      supported_features: 43
+      state: 'on'
+    light.hue_ambiance_lamp_2:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 64
+      color_temp: 420
+      friendly_name: Kitchen Ceiling Light 2
+      supported_features: 43
+      state: 'on'
+    light.hue_play_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 51
+      hs_color:
+      - 252.475
+      - 39.608
+      rgb_color:
+      - 174
+      - 153
+      - 255
+      xy_color:
+      - 0.262
+      - 0.202
+      effect: none
+      friendly_name: TV Light Left
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'on'
+    light.hue_play_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 51
+      hs_color:
+      - 252.475
+      - 39.608
+      rgb_color:
+      - 174
+      - 153
+      - 255
+      xy_color:
+      - 0.262
+      - 0.202
+      effect: none
+      friendly_name: TV Light Right
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'on'
+    light.lightstrip:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      supported_color_modes:
+      - color_temp
+      - hs
+      flowing: false
+      music_mode: false
+      friendly_name: Lightstrip
+      icon: mdi:led-strip-variant
+      supported_features: 63
+      state: 'off'
+    light.desk_lamp:
+      min_mireds: 250
+      max_mireds: 666
+      effect_list:
+      - effect_pulse
+      - effect_stop
+      supported_color_modes:
+      - color_temp
+      friendly_name: Desk Lamp
+      icon: mdi:desk-lamp
+      supported_features: 39
+      state: 'off'
+    light.floor_lamp_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 76
+      hs_color:
+      - 33.488
+      - 84.314
+      rgb_color:
+      - 255
+      - 159
+      - 39
+      xy_color:
+      - 0.562
+      - 0.403
+      effect: none
+      friendly_name: Floor Lamp Left
+      icon: mdi:floor-lamp
+      supported_features: 63
+      state: 'on'
+    light.floor_lamp_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 76
+      hs_color:
+      - 33.488
+      - 84.314
+      rgb_color:
+      - 255
+      - 159
+      - 39
+      xy_color:
+      - 0.562
+      - 0.403
+      effect: none
+      friendly_name: Floor Lamp Right
+      icon: mdi:floor-lamp
+      supported_features: 63
+      state: 'on'
+- id: '1621656649168'
+  name: Good Night
+  entities:
+    light.ceiling_light_inner:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      friendly_name: Hallway Ceiling Light 1
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'off'
+    light.ceiling_light_outer:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      friendly_name: Hallway Ceiling Light 2
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'off'
+    light.hue_ambiance_lamp_1:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      friendly_name: Kitchen Ceiling Light 1
+      supported_features: 43
+      state: 'off'
+    light.hue_ambiance_lamp_2:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      friendly_name: Kitchen Ceiling Light 2
+      supported_features: 43
+      state: 'off'
+    light.hue_play_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      friendly_name: TV Light Left
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'off'
+    light.hue_play_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      friendly_name: TV Light Right
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'off'
+    light.lightstrip:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      supported_color_modes:
+      - color_temp
+      - hs
+      flowing: false
+      music_mode: false
+      friendly_name: Lightstrip
+      icon: mdi:led-strip-variant
+      supported_features: 63
+      state: 'off'
+    light.desk_lamp:
+      min_mireds: 250
+      max_mireds: 666
+      effect_list:
+      - effect_pulse
+      - effect_stop
+      supported_color_modes:
+      - color_temp
+      friendly_name: Desk Lamp
+      icon: mdi:desk-lamp
+      supported_features: 39
+      state: 'off'
+    light.floor_lamp_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      friendly_name: Floor Lamp Left
+      icon: mdi:floor-lamp
+      supported_features: 63
+      state: 'off'
+    light.floor_lamp_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      friendly_name: Floor Lamp Right
+      icon: mdi:floor-lamp
+      supported_features: 63
+      state: 'off'
+- id: '1621656711291'
+  name: Leave Home
+  entities:
+    light.ceiling_light_inner:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      friendly_name: Hallway Ceiling Light 1
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'off'
+    light.ceiling_light_outer:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      friendly_name: Hallway Ceiling Light 2
+      icon: mdi:ceiling-light
+      supported_features: 63
+      state: 'off'
+    light.hue_ambiance_lamp_2:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      friendly_name: Kitchen Ceiling Light
+      icon: mdi:ceiling-light
+      supported_features: 43
+      state: 'off'
+    light.hue_play_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      friendly_name: TV Light Left
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'off'
+    light.hue_play_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      friendly_name: TV Light Right
+      icon: mdi:led-variant-on
+      supported_features: 63
+      state: 'off'
+    light.lightstrip:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      supported_color_modes:
+      - color_temp
+      - hs
+      - rgb
+      flowing: false
+      music_mode: false
+      friendly_name: Lightstrip
+      icon: mdi:led-strip-variant
+      supported_features: 44
+      state: 'off'
+    light.desk_lamp:
+      min_mireds: 111
+      max_mireds: 666
+      effect_list:
+      - effect_pulse
+      - effect_stop
+      supported_color_modes:
+      - color_temp
+      friendly_name: Lamp
+      icon: mdi:floor-lamp
+      supported_features: 39
+      state: 'off'
+    light.floor_lamp_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      friendly_name: Lamp Left
+      icon: mdi:desk-lamp
+      supported_features: 63
+      state: 'off'
+    light.floor_lamp_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      friendly_name: Lamp Right
+      icon: mdi:desk-lamp
+      supported_features: 63
+      state: 'off'

@@ -1,0 +1,170 @@
+'1592682876227':
+  alias: Resume Schedule
+  sequence:
+  - data:
+      resume_all: true
+    entity_id: climate.living_room
+    service: ecobee.resume_program
+  mode: single
+'1593284468001':
+  alias: Input PlayStation 5
+  sequence:
+  - data:
+      entity_id: media_player.ht_z9f
+      source: HDMI1
+    entity_id: media_player.ht_z9f
+    service: media_player.select_source
+  - data:
+      source: PlayStation 5
+    service: media_player.select_source
+    target:
+      entity_id:
+      - media_player.sony_bravia_tv
+  mode: single
+'1593284496702':
+  alias: Input Apple TV
+  sequence:
+  - service: media_player.select_source
+    data:
+      source: HDMI2
+    target:
+      entity_id: media_player.ht_z9f
+  - service: media_player.select_source
+    data:
+      source: Apple TV 4K
+    target:
+      entity_id:
+      - media_player.sony_bravia_tv
+  mode: single
+feeling_high:
+  alias: Night Time
+  sequence:
+  - service: input_select.select_next
+    data: {}
+    entity_id: input_select.scene_selector
+  - service: scene.turn_on
+    data:
+      entity_id: '{{ states(''input_select.scene_selector'') }}'
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - service: climate.set_preset_mode
+    data:
+      preset_mode: Home
+    entity_id: climate.living_room
+  mode: single
+  icon: mdi:palette
+movie_time:
+  alias: Movie Time
+  sequence:
+  - scene: scene.movie_time
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - service: climate.set_preset_mode
+    data:
+      preset_mode: Home
+    entity_id: climate.living_room
+  mode: single
+  icon: mdi:palette
+home:
+  alias: Arrive Home
+  sequence:
+  - scene: scene.arrive_home
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - service: climate.set_preset_mode
+    data:
+      preset_mode: Home
+    entity_id: climate.living_room
+  mode: single
+  icon: mdi:palette
+leaving:
+  alias: Leave Home
+  sequence:
+  - scene: scene.leave_home
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - service: climate.set_preset_mode
+    data:
+      preset_mode: Away
+    entity_id: climate.living_room
+  - service: media_player.turn_off
+    data: {}
+    entity_id: media_player.sony_bravia_tv
+  mode: single
+  icon: mdi:palette
+good_night:
+  alias: Good Night
+  sequence:
+  - scene: scene.good_night
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - service: climate.set_preset_mode
+    data:
+      preset_mode: Sleep
+    entity_id: climate.living_room
+  - service: media_player.turn_off
+    data: {}
+    entity_id: media_player.sony_bravia_tv
+  mode: single
+  icon: mdi:palette
+good_morning:
+  alias: Good Morning
+  sequence:
+  - scene: scene.good_morning
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - service: climate.set_preset_mode
+    data:
+      preset_mode: Home
+    entity_id: climate.living_room
+  mode: single
+  icon: mdi:palette
+'1629140590814':
+  alias: Input Nintendo Switch
+  sequence:
+  - data:
+      source: TV
+    service: media_player.select_source
+    target:
+      entity_id:
+      - media_player.ht_z9f
+  - data:
+      source: HDMI 2
+    service: media_player.select_source
+    target:
+      entity_id: media_player.sony_bravia_tv
+  mode: single
+tv_input_turnable:
+  alias: Input Turntable
+  sequence:
+  - type: turn_on
+    device_id: 7566edaed63b2d30c24c2e0aa9aaabca
+    entity_id: switch.koogeek_p1_6c79c0
+    domain: switch
+  - service: media_player.turn_on
+    target:
+      entity_id: media_player.ht_z9f
+  - service: media_player.select_source
+    target:
+      entity_id: media_player.ht_z9f
+    data:
+      source: Analog
+  mode: single
