@@ -3,16 +3,16 @@
   sequence:
   - data:
       resume_all: true
-    entity_id: climate.living_room
+    entity_id: climate.ecobee
     service: ecobee.resume_program
   mode: single
 '1593284468001':
   alias: Input PlayStation 5
   sequence:
   - data:
-      entity_id: media_player.ht_z9f
+      entity_id: media_player.sony_bravia_soundbar
       source: HDMI1
-    entity_id: media_player.ht_z9f
+    entity_id: media_player.sony_bravia_soundbar
     service: media_player.select_source
   - data:
       source: PlayStation 5
@@ -28,7 +28,7 @@
     data:
       source: HDMI2
     target:
-      entity_id: media_player.ht_z9f
+      entity_id: media_player.sony_bravia_soundbar
   - service: media_player.select_source
     data:
       source: Apple TV 4K
@@ -36,7 +36,7 @@
       entity_id:
       - media_player.sony_bravia_tv
   mode: single
-feeling_high:
+'1593284496392':
   alias: Night Time
   sequence:
   - service: input_select.select_next
@@ -53,10 +53,10 @@ feeling_high:
   - service: climate.set_preset_mode
     data:
       preset_mode: Home
-    entity_id: climate.living_room
+    entity_id: climate.ecobee
   mode: single
   icon: mdi:palette
-movie_time:
+'1593284496148':
   alias: Movie Time
   sequence:
   - scene: scene.movie_time
@@ -68,10 +68,10 @@ movie_time:
   - service: climate.set_preset_mode
     data:
       preset_mode: Home
-    entity_id: climate.living_room
+    entity_id: climate.ecobee
   mode: single
   icon: mdi:palette
-home:
+'1593284499385':
   alias: Arrive Home
   sequence:
   - scene: scene.arrive_home
@@ -83,10 +83,10 @@ home:
   - service: climate.set_preset_mode
     data:
       preset_mode: Home
-    entity_id: climate.living_room
+    entity_id: climate.ecobee
   mode: single
   icon: mdi:palette
-leaving:
+'1593284499481':
   alias: Leave Home
   sequence:
   - scene: scene.leave_home
@@ -98,13 +98,13 @@ leaving:
   - service: climate.set_preset_mode
     data:
       preset_mode: Away
-    entity_id: climate.living_room
+    entity_id: climate.ecobee
   - service: media_player.turn_off
     data: {}
     entity_id: media_player.sony_bravia_tv
   mode: single
   icon: mdi:palette
-good_night:
+'1593284499449':
   alias: Good Night
   sequence:
   - scene: scene.good_night
@@ -116,13 +116,13 @@ good_night:
   - service: climate.set_preset_mode
     data:
       preset_mode: Sleep
-    entity_id: climate.living_room
+    entity_id: climate.ecobee
   - service: media_player.turn_off
     data: {}
     entity_id: media_player.sony_bravia_tv
   mode: single
   icon: mdi:palette
-good_morning:
+'1593284499412':
   alias: Good Morning
   sequence:
   - scene: scene.good_morning
@@ -134,7 +134,7 @@ good_morning:
   - service: climate.set_preset_mode
     data:
       preset_mode: Home
-    entity_id: climate.living_room
+    entity_id: climate.ecobee
   mode: single
   icon: mdi:palette
 '1629140590814':
@@ -145,14 +145,14 @@ good_morning:
     service: media_player.select_source
     target:
       entity_id:
-      - media_player.ht_z9f
+      - media_player.sony_bravia_soundbar
   - data:
       source: HDMI 2
     service: media_player.select_source
     target:
       entity_id: media_player.sony_bravia_tv
   mode: single
-tv_input_turnable:
+'1593284495837':
   alias: Input Turntable
   sequence:
   - type: turn_on
@@ -161,10 +161,10 @@ tv_input_turnable:
     domain: switch
   - service: media_player.turn_on
     target:
-      entity_id: media_player.ht_z9f
+      entity_id: media_player.sony_bravia_soundbar
   - service: media_player.select_source
     target:
-      entity_id: media_player.ht_z9f
+      entity_id: media_player.sony_bravia_soundbar
     data:
       source: Analog
   mode: single

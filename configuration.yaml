@@ -23,20 +23,20 @@ sensor:
         friendly_name: 'Target Temperature'
         unit_of_measurement: '°C'
         value_template: >
-          {{ state_attr('climate.living_room', 'temperature') }}
+          {{ state_attr('climate.ecobee', 'temperature') }}
       hvac_action:
         unique_id: hvac_action
         friendly_name: 'HAVC Action'
         value_template: >
-          {% if is_state_attr('climate.living_room', 'hvac_action', 'heating') %} Heating
-          {% elif is_state_attr('climate.living_room', 'hvac_action', 'cooling') %} Cooling
+          {% if is_state_attr('climate.ecobee', 'hvac_action', 'heating') %} Heating
+          {% elif is_state_attr('climate.ecobee', 'hvac_action', 'cooling') %} Cooling
           {% else %} Idle
           {% endif %}
       fan_action:
         unique_id: fan_action
         friendly_name: 'Fan Action'
         value_template:  >
-          {% if is_state_attr('climate.living_room', 'fan', 'on') %} On
+          {% if is_state_attr('climate.ecobee', 'fan', 'on') %} On
           {% else %} Off
           {% endif %}
 

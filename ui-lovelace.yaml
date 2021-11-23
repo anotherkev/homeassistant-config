@@ -17,7 +17,7 @@ views:
                 when_idle: true
                 when_standby: true
             - type: custom:mini-media-player
-              entity: media_player.ht_z9f
+              entity: media_player.sony_bravia_soundbar
               artwork: cover
               source: icon
               info: scroll
@@ -37,30 +37,30 @@ views:
                 show_header_toggle: false
                 state_color: true
                 entities:
-                  - script.good_morning
-                  - script.good_night
-                  - script.home
-                  - script.leaving
-                  - script.feeling_high
-                  - script.movie_time
+                  - script.1593284499412
+                  - script.1593284499449
+                  - script.1593284499385
+                  - script.1593284499481
+                  - script.1593284496392
+                  - script.1593284496148
                   - script.1592682876227
                   - script.1593284496702
                   - script.1593284468001
                   - script.1629140590814
-                  - script.tv_input_turnable
+                  - script.1593284495837
               - type: entities
                 show_header_toggle: false
                 state_color: true
                 entities:
-                  - light.floor_lamp_left
-                  - light.floor_lamp_right
-                  - light.hue_play_left
-                  - light.hue_play_right
-                  - light.desk_lamp
-                  - light.hue_ambiance_lamp_2
-                  - light.ceiling_light_inner
-                  - light.ceiling_light_outer
-                  - light.lightstrip
+                  - light.hue_color_lamp_1
+                  - light.hue_signe_table_1
+                  - light.hue_play_2
+                  - light.hue_play_1
+                  - light.lifx
+                  - light.hue_ambiance_lamp_1
+                  - light.hue_color_lamp_3
+                  - light.hue_color_lamp_2
+                  - light.yeelight_lightstrip
                   - light.gateway_light_34ce00837eef
                   - switch.koogeek_p1_6c79c0
                   - switch.adguard_filtering
@@ -68,9 +68,9 @@ views:
       - type: vertical-stack
         cards:
           - type: weather-forecast
-            entity: weather.living_room
+            entity: weather.ecobee
           - type: custom:simple-thermostat
-            entity: climate.living_room
+            entity: climate.ecobee
             header: false
             hide:
               temperature: true
@@ -213,9 +213,9 @@ views:
       - type: vertical-stack
         cards:
           - type: entity
-            entity: binary_sensor.updater
+            entity: binary_sensor.hass_updater
           - type: entity
-            entity: sensor.hacs
+            entity: sensor.hacs_updater
           - type: entities
             show_header_toggle: false
             state_color: true

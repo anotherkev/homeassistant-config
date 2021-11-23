@@ -1,7 +1,7 @@
 - id: '1606097710069'
   name: 'Night Time: Scene 1'
   entities:
-    light.floor_lamp_left:
+    light.hue_color_lamp_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -27,7 +27,7 @@
       icon: mdi:floor-lamp
       supported_features: 63
       state: 'on'
-    light.floor_lamp_right:
+    light.hue_signe_table_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -53,7 +53,7 @@
       icon: mdi:floor-lamp
       supported_features: 63
       state: 'on'
-    light.hue_play_left:
+    light.hue_play_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -79,7 +79,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'on'
-    light.hue_play_right:
+    light.hue_play_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -105,7 +105,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'on'
-    light.ceiling_light_inner:
+    light.hue_color_lamp_3:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -131,7 +131,7 @@
       icon: mdi:ceiling-light
       supported_features: 63
       state: 'on'
-    light.ceiling_light_outer:
+    light.hue_color_lamp_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -168,7 +168,7 @@
       friendly_name: Kitchen Ceiling Light 1
       supported_features: 43
       state: 'on'
-    light.hue_ambiance_lamp_2:
+    light.hue_ambiance_lamp_1:
       min_mireds: 153
       max_mireds: 454
       supported_color_modes:
@@ -179,7 +179,7 @@
       friendly_name: Kitchen Ceiling Light 2
       supported_features: 43
       state: 'on'
-    light.desk_lamp:
+    light.lifx:
       min_mireds: 250
       max_mireds: 666
       effect_list:
@@ -194,7 +194,7 @@
       icon: mdi:desk-lamp
       supported_features: 39
       state: 'on'
-    light.lightstrip:
+    light.yeelight_lightstrip:
       min_mireds: 153
       max_mireds: 588
       effect_list:
@@ -249,7 +249,7 @@
 - id: '1606097816358'
   name: 'Night Time: Scene 2'
   entities:
-    light.ceiling_light_inner:
+    light.hue_color_lamp_3:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -275,7 +275,7 @@
       icon: mdi:ceiling-light
       supported_features: 63
       state: 'on'
-    light.ceiling_light_outer:
+    light.hue_color_lamp_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -301,7 +301,7 @@
       icon: mdi:ceiling-light
       supported_features: 63
       state: 'on'
-    light.hue_play_left:
+    light.hue_play_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -327,7 +327,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'on'
-    light.hue_play_right:
+    light.hue_play_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -353,7 +353,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'on'
-    light.floor_lamp_left:
+    light.hue_color_lamp_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -379,7 +379,7 @@
       icon: mdi:floor-lamp
       supported_features: 63
       state: 'on'
-    light.floor_lamp_right:
+    light.hue_signe_table_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -405,7 +405,7 @@
       icon: mdi:floor-lamp
       supported_features: 63
       state: 'on'
-    light.desk_lamp:
+    light.lifx:
       min_mireds: 250
       max_mireds: 666
       effect_list:
@@ -420,7 +420,7 @@
       icon: mdi:desk-lamp
       supported_features: 39
       state: 'on'
-    light.lightstrip:
+    light.yeelight_lightstrip:
       min_mireds: 153
       max_mireds: 588
       effect_list:
@@ -483,7 +483,7 @@
       friendly_name: Kitchen Ceiling Light 1
       supported_features: 43
       state: 'on'
-    light.hue_ambiance_lamp_2:
+    light.hue_ambiance_lamp_1:
       min_mireds: 153
       max_mireds: 454
       supported_color_modes:
@@ -497,7 +497,7 @@
 - id: '1606162535813'
   name: 'Night Time: Scene 3'
   entities:
-    light.floor_lamp_left:
+    light.hue_color_lamp_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -523,7 +523,7 @@
       icon: mdi:floor-lamp
       supported_features: 63
       state: 'on'
-    light.floor_lamp_right:
+    light.hue_signe_table_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -549,7 +549,7 @@
       icon: mdi:floor-lamp
       supported_features: 63
       state: 'on'
-    light.ceiling_light_inner:
+    light.hue_color_lamp_3:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -575,7 +575,7 @@
       icon: mdi:ceiling-light
       supported_features: 63
       state: 'on'
-    light.ceiling_light_outer:
+    light.hue_color_lamp_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -601,7 +601,7 @@
       icon: mdi:ceiling-light
       supported_features: 63
       state: 'on'
-    light.hue_play_left:
+    light.hue_play_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -627,7 +627,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'on'
-    light.hue_play_right:
+    light.hue_play_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -653,7 +653,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'on'
-    light.desk_lamp:
+    light.lifx:
       min_mireds: 250
       max_mireds: 666
       effect_list:
@@ -668,7 +668,7 @@
       icon: mdi:desk-lamp
       supported_features: 39
       state: 'on'
-    light.lightstrip:
+    light.yeelight_lightstrip:
       min_mireds: 153
       max_mireds: 588
       effect_list:
@@ -731,7 +731,7 @@
       friendly_name: Kitchen Ceiling Light 1
       supported_features: 43
       state: 'on'
-    light.hue_ambiance_lamp_2:
+    light.hue_ambiance_lamp_1:
       min_mireds: 153
       max_mireds: 454
       supported_color_modes:
@@ -745,7 +745,7 @@
 - id: '1606162652621'
   name: 'Night Time: Scene 4'
   entities:
-    light.ceiling_light_inner:
+    light.hue_color_lamp_3:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -771,7 +771,7 @@
       icon: mdi:ceiling-light
       supported_features: 63
       state: 'on'
-    light.ceiling_light_outer:
+    light.hue_color_lamp_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -797,7 +797,7 @@
       icon: mdi:ceiling-light
       supported_features: 63
       state: 'on'
-    light.floor_lamp_left:
+    light.hue_color_lamp_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -823,7 +823,7 @@
       icon: mdi:floor-lamp
       supported_features: 63
       state: 'on'
-    light.floor_lamp_right:
+    light.hue_signe_table_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -849,7 +849,7 @@
       icon: mdi:floor-lamp
       supported_features: 63
       state: 'on'
-    light.hue_play_left:
+    light.hue_play_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -875,7 +875,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'on'
-    light.hue_play_right:
+    light.hue_play_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -901,7 +901,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'on'
-    light.desk_lamp:
+    light.lifx:
       min_mireds: 250
       max_mireds: 666
       effect_list:
@@ -916,7 +916,7 @@
       icon: mdi:desk-lamp
       supported_features: 39
       state: 'on'
-    light.lightstrip:
+    light.yeelight_lightstrip:
       min_mireds: 153
       max_mireds: 588
       effect_list:
@@ -979,7 +979,7 @@
       friendly_name: Kitchen Ceiling Light 1
       supported_features: 43
       state: 'on'
-    light.hue_ambiance_lamp_2:
+    light.hue_ambiance_lamp_1:
       min_mireds: 153
       max_mireds: 454
       supported_color_modes:
@@ -993,7 +993,7 @@
 - id: '1621655471185'
   name: Good Morning
   entities:
-    light.ceiling_light_inner:
+    light.hue_color_lamp_3:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1019,7 +1019,7 @@
       icon: mdi:ceiling-light
       supported_features: 63
       state: 'on'
-    light.ceiling_light_outer:
+    light.hue_color_lamp_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1056,7 +1056,7 @@
       friendly_name: Kitchen Ceiling Light 1
       supported_features: 43
       state: 'on'
-    light.hue_ambiance_lamp_2:
+    light.hue_ambiance_lamp_1:
       min_mireds: 153
       max_mireds: 454
       supported_color_modes:
@@ -1067,7 +1067,7 @@
       friendly_name: Kitchen Ceiling Light 2
       supported_features: 43
       state: 'on'
-    light.hue_play_left:
+    light.hue_play_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1093,7 +1093,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'on'
-    light.hue_play_right:
+    light.hue_play_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1119,7 +1119,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'on'
-    light.lightstrip:
+    light.yeelight_lightstrip:
       min_mireds: 153
       max_mireds: 588
       effect_list:
@@ -1171,7 +1171,7 @@
       icon: mdi:led-strip-variant
       supported_features: 63
       state: 'on'
-    light.desk_lamp:
+    light.lifx:
       min_mireds: 250
       max_mireds: 666
       effect_list:
@@ -1186,7 +1186,7 @@
       icon: mdi:desk-lamp
       supported_features: 39
       state: 'on'
-    light.floor_lamp_left:
+    light.hue_color_lamp_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1212,7 +1212,7 @@
       icon: mdi:floor-lamp
       supported_features: 63
       state: 'on'
-    light.floor_lamp_right:
+    light.hue_signe_table_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1241,7 +1241,7 @@
 - id: '1621655602987'
   name: Arrive Home
   entities:
-    light.ceiling_light_inner:
+    light.hue_color_lamp_3:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1267,7 +1267,7 @@
       icon: mdi:ceiling-light
       supported_features: 63
       state: 'on'
-    light.ceiling_light_outer:
+    light.hue_color_lamp_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1304,7 +1304,7 @@
       friendly_name: Kitchen Ceiling Light 1
       supported_features: 43
       state: 'on'
-    light.hue_ambiance_lamp_2:
+    light.hue_ambiance_lamp_1:
       min_mireds: 153
       max_mireds: 454
       supported_color_modes:
@@ -1315,7 +1315,7 @@
       friendly_name: Kitchen Ceiling Light 2
       supported_features: 43
       state: 'on'
-    light.hue_play_left:
+    light.hue_play_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1341,7 +1341,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'on'
-    light.hue_play_right:
+    light.hue_play_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1367,7 +1367,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'on'
-    light.lightstrip:
+    light.yeelight_lightstrip:
       min_mireds: 153
       max_mireds: 588
       effect_list:
@@ -1419,7 +1419,7 @@
       icon: mdi:led-strip-variant
       supported_features: 63
       state: 'on'
-    light.desk_lamp:
+    light.lifx:
       min_mireds: 250
       max_mireds: 666
       effect_list:
@@ -1434,7 +1434,7 @@
       icon: mdi:desk-lamp
       supported_features: 39
       state: 'on'
-    light.floor_lamp_left:
+    light.hue_color_lamp_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1460,7 +1460,7 @@
       icon: mdi:floor-lamp
       supported_features: 63
       state: 'on'
-    light.floor_lamp_right:
+    light.hue_signe_table_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1489,7 +1489,7 @@
 - id: '1621656289256'
   name: Movie Time
   entities:
-    light.ceiling_light_inner:
+    light.hue_color_lamp_3:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1515,7 +1515,7 @@
       icon: mdi:ceiling-light
       supported_features: 63
       state: 'on'
-    light.ceiling_light_outer:
+    light.hue_color_lamp_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1552,7 +1552,7 @@
       friendly_name: Kitchen Ceiling Light 1
       supported_features: 43
       state: 'on'
-    light.hue_ambiance_lamp_2:
+    light.hue_ambiance_lamp_1:
       min_mireds: 153
       max_mireds: 454
       supported_color_modes:
@@ -1563,7 +1563,7 @@
       friendly_name: Kitchen Ceiling Light 2
       supported_features: 43
       state: 'on'
-    light.hue_play_left:
+    light.hue_play_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1589,7 +1589,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'on'
-    light.hue_play_right:
+    light.hue_play_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1615,7 +1615,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'on'
-    light.lightstrip:
+    light.yeelight_lightstrip:
       min_mireds: 153
       max_mireds: 588
       effect_list:
@@ -1654,7 +1654,7 @@
       icon: mdi:led-strip-variant
       supported_features: 63
       state: 'off'
-    light.desk_lamp:
+    light.lifx:
       min_mireds: 250
       max_mireds: 666
       effect_list:
@@ -1666,7 +1666,7 @@
       icon: mdi:desk-lamp
       supported_features: 39
       state: 'off'
-    light.floor_lamp_left:
+    light.hue_color_lamp_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1692,7 +1692,7 @@
       icon: mdi:floor-lamp
       supported_features: 63
       state: 'on'
-    light.floor_lamp_right:
+    light.hue_signe_table_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1721,7 +1721,7 @@
 - id: '1621656649168'
   name: Good Night
   entities:
-    light.ceiling_light_inner:
+    light.hue_color_lamp_3:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1734,7 +1734,7 @@
       icon: mdi:ceiling-light
       supported_features: 63
       state: 'off'
-    light.ceiling_light_outer:
+    light.hue_color_lamp_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1755,7 +1755,7 @@
       friendly_name: Kitchen Ceiling Light 1
       supported_features: 43
       state: 'off'
-    light.hue_ambiance_lamp_2:
+    light.hue_ambiance_lamp_1:
       min_mireds: 153
       max_mireds: 454
       supported_color_modes:
@@ -1763,7 +1763,7 @@
       friendly_name: Kitchen Ceiling Light 2
       supported_features: 43
       state: 'off'
-    light.hue_play_left:
+    light.hue_play_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1776,7 +1776,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'off'
-    light.hue_play_right:
+    light.hue_play_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1789,7 +1789,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'off'
-    light.lightstrip:
+    light.yeelight_lightstrip:
       min_mireds: 153
       max_mireds: 588
       effect_list:
@@ -1828,7 +1828,7 @@
       icon: mdi:led-strip-variant
       supported_features: 63
       state: 'off'
-    light.desk_lamp:
+    light.lifx:
       min_mireds: 250
       max_mireds: 666
       effect_list:
@@ -1840,7 +1840,7 @@
       icon: mdi:desk-lamp
       supported_features: 39
       state: 'off'
-    light.floor_lamp_left:
+    light.hue_color_lamp_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1853,7 +1853,7 @@
       icon: mdi:floor-lamp
       supported_features: 63
       state: 'off'
-    light.floor_lamp_right:
+    light.hue_signe_table_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1869,7 +1869,7 @@
 - id: '1621656711291'
   name: Leave Home
   entities:
-    light.ceiling_light_inner:
+    light.hue_color_lamp_3:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1882,7 +1882,7 @@
       icon: mdi:ceiling-light
       supported_features: 63
       state: 'off'
-    light.ceiling_light_outer:
+    light.hue_color_lamp_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1895,7 +1895,7 @@
       icon: mdi:ceiling-light
       supported_features: 63
       state: 'off'
-    light.hue_ambiance_lamp_2:
+    light.hue_ambiance_lamp_1:
       min_mireds: 153
       max_mireds: 454
       supported_color_modes:
@@ -1904,7 +1904,7 @@
       icon: mdi:ceiling-light
       supported_features: 43
       state: 'off'
-    light.hue_play_left:
+    light.hue_play_2:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1917,7 +1917,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'off'
-    light.hue_play_right:
+    light.hue_play_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1930,7 +1930,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'off'
-    light.lightstrip:
+    light.yeelight_lightstrip:
       min_mireds: 153
       max_mireds: 588
       effect_list:
@@ -1970,7 +1970,7 @@
       icon: mdi:led-strip-variant
       supported_features: 44
       state: 'off'
-    light.desk_lamp:
+    light.lifx:
       min_mireds: 111
       max_mireds: 666
       effect_list:
@@ -1982,7 +1982,7 @@
       icon: mdi:floor-lamp
       supported_features: 39
       state: 'off'
-    light.floor_lamp_left:
+    light.hue_color_lamp_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:
@@ -1995,7 +1995,7 @@
       icon: mdi:desk-lamp
       supported_features: 63
       state: 'off'
-    light.floor_lamp_right:
+    light.hue_signe_table_1:
       min_mireds: 153
       max_mireds: 500
       effect_list:

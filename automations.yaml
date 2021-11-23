@@ -11,7 +11,7 @@
   action:
   - type: toggle
     device_id: 3327d85fbec0049ceec1d18b2716fe58
-    entity_id: light.desk_lamp
+    entity_id: light.lifx
     domain: light
   mode: single
 - id: '1592681633691'
@@ -25,7 +25,7 @@
     platform: event
   condition: []
   action:
-  - service: script.feeling_high
+  - service: script.1593284496392
     data: {}
   mode: single
 - id: '1592681712022'
@@ -39,7 +39,7 @@
     platform: event
   condition: []
   action:
-  - service: script.movie_time
+  - service: script.1593284496148
     data: {}
   mode: single
 - id: '1592682345845'
@@ -87,7 +87,7 @@
     - thu
     - fri
   action:
-  - service: script.good_morning
+  - service: script.1593284499412
     data: {}
   mode: single
 - id: '1592701058033'
@@ -102,7 +102,7 @@
     - sat
     - sun
   action:
-  - service: script.good_morning
+  - service: script.1593284499412
   mode: single
 - id: '1593114769842'
   alias: 'HomeKit: TV Press Up'
@@ -249,7 +249,7 @@
   description: ''
   trigger:
   - platform: numeric_state
-    entity_id: sensor.hacs
+    entity_id: sensor.hacs_updater
     above: '0'
   condition: []
   action:
@@ -257,6 +257,6 @@
     data:
       notification_id: hacs
       title: HACS Updater
-      message: '{{ states(''sensor.hacs'') }} {{ state_attr(''sensor.hacs'', ''unit_of_measurement'')
-        }}'
+      message: '{{ states(''sensor.hacs_updater'') }} {{ state_attr(''sensor.hacs_updater'',
+        ''unit_of_measurement'') }}'
   mode: single
