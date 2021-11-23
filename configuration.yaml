@@ -15,12 +15,6 @@ lovelace:
     - url: /hacsfiles/simple-thermostat/simple-thermostat.js
       type: module
 
-binary_sensor:
-  - platform: workday
-    name: Workday
-    country: CA
-    province: 'ON'
-
 sensor:
   - platform: template
     sensors:

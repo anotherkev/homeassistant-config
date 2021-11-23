@@ -220,13 +220,6 @@ views:
             show_header_toggle: false
             state_color: true
             entities:
-              - sensor.speedtest_download
-              - sensor.speedtest_upload
-              - sensor.speedtest_ping
-          - type: entities
-            show_header_toggle: false
-            state_color: true
-            entities:
               - sensor.canon_ts3400_series_black
               - sensor.canon_ts3400_series_color
           - type: entities
@@ -238,3 +231,20 @@ views:
               - sensor.battery_158d00015b8344
               - sensor.battery_158d00015813fd
               - sensor.battery_158d0001a2b637
+
+      - type: vertical-stack
+        cards:
+          - type: entities
+            show_header_toggle: false
+            state_color: true
+            entities:
+              - sensor.speedtest_download
+              - sensor.speedtest_upload
+              - sensor.speedtest_ping
+          - type: entities
+            show_header_toggle: false
+            state_color: true
+            entities:
+              - sensor.adguard_dns_queries
+              - sensor.adguard_dns_queries_blocked_ratio
+              - sensor.adguard_average_processing_speed

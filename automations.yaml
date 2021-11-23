@@ -9,10 +9,10 @@
     platform: event
   condition: []
   action:
-  - device_id: 05801841d1eb49fa9989f82259041704
-    domain: light
+  - type: toggle
+    device_id: 3327d85fbec0049ceec1d18b2716fe58
     entity_id: light.desk_lamp
-    type: toggle
+    domain: light
   mode: single
 - id: '1592681633691'
   alias: 'Button: Long Press'
@@ -73,36 +73,36 @@
     service: light.turn_off
   mode: single
 - id: '1592700804511'
-  alias: 'Scene: Workday, 08:30'
+  alias: 'HA: Weekday, 08:30'
   description: ''
   trigger:
-  - at: 08:30
+  - at: 08:30:00
     platform: time
   condition:
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: binary_sensor.workday
-      state: 'on'
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
   action:
   - service: script.good_morning
     data: {}
   mode: single
 - id: '1592701058033'
-  alias: 'Scene: Weekend, 09:30'
+  alias: 'HA: Weekend, 09:30'
   description: ''
   trigger:
-  - at: 09:30
+  - at: 09:30:00
     platform: time
   condition:
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: binary_sensor.workday
-      state: 'off'
+  - condition: time
+    weekday:
+    - sat
+    - sun
   action:
-  - service: script.home
-    data: {}
+  - service: script.good_morning
   mode: single
 - id: '1593114769842'
   alias: 'HomeKit: TV Press Up'
