@@ -179,7 +179,7 @@
       friendly_name: Kitchen Ceiling Light 2
       supported_features: 43
       state: 'on'
-    light.lifx:
+    light.hue_color_lamp_4:
       min_mireds: 250
       max_mireds: 666
       effect_list:
@@ -405,7 +405,7 @@
       icon: mdi:floor-lamp
       supported_features: 63
       state: 'on'
-    light.lifx:
+    light.hue_color_lamp_4:
       min_mireds: 250
       max_mireds: 666
       effect_list:
@@ -653,7 +653,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'on'
-    light.lifx:
+    light.hue_color_lamp_4:
       min_mireds: 250
       max_mireds: 666
       effect_list:
@@ -901,7 +901,7 @@
       icon: mdi:led-variant-on
       supported_features: 63
       state: 'on'
-    light.lifx:
+    light.hue_color_lamp_4:
       min_mireds: 250
       max_mireds: 666
       effect_list:
@@ -1171,7 +1171,7 @@
       icon: mdi:led-strip-variant
       supported_features: 63
       state: 'on'
-    light.lifx:
+    light.hue_color_lamp_4:
       min_mireds: 250
       max_mireds: 666
       effect_list:
@@ -1419,7 +1419,7 @@
       icon: mdi:led-strip-variant
       supported_features: 63
       state: 'on'
-    light.lifx:
+    light.hue_color_lamp_4:
       min_mireds: 250
       max_mireds: 666
       effect_list:
@@ -1654,7 +1654,7 @@
       icon: mdi:led-strip-variant
       supported_features: 63
       state: 'off'
-    light.lifx:
+    light.hue_color_lamp_4:
       min_mireds: 250
       max_mireds: 666
       effect_list:
@@ -1828,7 +1828,7 @@
       icon: mdi:led-strip-variant
       supported_features: 63
       state: 'off'
-    light.lifx:
+    light.hue_color_lamp_4:
       min_mireds: 250
       max_mireds: 666
       effect_list:
@@ -1970,7 +1970,7 @@
       icon: mdi:led-strip-variant
       supported_features: 44
       state: 'off'
-    light.lifx:
+    light.hue_color_lamp_4:
       min_mireds: 111
       max_mireds: 666
       effect_list:

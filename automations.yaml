@@ -11,7 +11,7 @@
   action:
   - type: toggle
     device_id: 3327d85fbec0049ceec1d18b2716fe58
-    entity_id: light.lifx
+    entity_id: light.hue_color_lamp_4
     domain: light
   mode: single
 - id: '1592681633691'
