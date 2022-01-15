@@ -49,3 +49,7 @@ panel_iframe:
     title: '404'
     url: 'http://192.168.1.100:8080'
     icon: 'mdi:web'
+  goaccess:
+    title: 'GoAccess'
+    url: 'http://192.168.1.100:8889'
+    icon: 'mdi:google-analytics'

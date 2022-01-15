@@ -41,29 +41,27 @@ views:
                   - script.1593284499449
                   - script.1593284499385
                   - script.1593284499481
-                  - script.1593284496392
-                  - script.1593284496148
                   - script.1592682876227
                   - script.1593284496702
                   - script.1593284468001
                   - script.1629140590814
                   - script.1593284495837
+                  - switch.adguard_filtering
+                  - switch.koogeek_p1_6c79c0
               - type: entities
                 show_header_toggle: false
                 state_color: true
                 entities:
-                  - light.hue_color_lamp_1
+                  - light.hue_signe_table_2
                   - light.hue_signe_table_1
                   - light.hue_play_2
                   - light.hue_play_1
                   - light.hue_color_lamp_4
-                  - light.hue_ambiance_lamp_1
+                  - light.hue_color_lamp_1
                   - light.hue_color_lamp_3
                   - light.hue_color_lamp_2
                   - light.yeelight_lightstrip
                   - light.gateway_light_34ce00837eef
-                  - switch.koogeek_p1_6c79c0
-                  - switch.adguard_filtering
 
       - type: vertical-stack
         cards:

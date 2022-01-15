@@ -7,7 +7,7 @@
     service: ecobee.resume_program
   mode: single
 '1593284468001':
-  alias: Input PlayStation 5
+  alias: Input PS5
   sequence:
   - data:
       entity_id: media_player.sony_bravia_soundbar
@@ -36,65 +36,15 @@
       entity_id:
       - media_player.sony_bravia_tv
   mode: single
-'1593284496392':
-  alias: Night Time
-  sequence:
-  - service: input_select.select_next
-    data: {}
-    entity_id: input_select.scene_selector
-  - service: scene.turn_on
-    data:
-      entity_id: '{{ states(''input_select.scene_selector'') }}'
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 2
-      milliseconds: 0
-  - service: climate.set_preset_mode
-    data:
-      preset_mode: Home
-    entity_id: climate.ecobee
-  mode: single
-  icon: mdi:palette
-'1593284496148':
-  alias: Movie Time
-  sequence:
-  - scene: scene.movie_time
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 2
-      milliseconds: 0
-  - service: climate.set_preset_mode
-    data:
-      preset_mode: Home
-    entity_id: climate.ecobee
-  mode: single
-  icon: mdi:palette
-'1593284499385':
-  alias: Arrive Home
-  sequence:
-  - scene: scene.arrive_home
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 2
-      milliseconds: 0
-  - service: climate.set_preset_mode
-    data:
-      preset_mode: Home
-    entity_id: climate.ecobee
-  mode: single
-  icon: mdi:palette
 '1593284499481':
   alias: Leave Home
   sequence:
-  - scene: scene.leave_home
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 2
-      milliseconds: 0
+  - service: light.turn_off
+    target:
+      area_id:
+      - bedroom
+      - entrance
+      - living_room
   - service: climate.set_preset_mode
     data:
       preset_mode: Away
@@ -107,12 +57,12 @@
 '1593284499449':
   alias: Good Night
   sequence:
-  - scene: scene.good_night
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 2
-      milliseconds: 0
+  - service: light.turn_off
+    target:
+      area_id:
+      - bedroom
+      - entrance
+      - living_room
   - service: climate.set_preset_mode
     data:
       preset_mode: Sleep
@@ -122,23 +72,8 @@
     entity_id: media_player.sony_bravia_tv
   mode: single
   icon: mdi:palette
-'1593284499412':
-  alias: Good Morning
-  sequence:
-  - scene: scene.good_morning
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 2
-      milliseconds: 0
-  - service: climate.set_preset_mode
-    data:
-      preset_mode: Home
-    entity_id: climate.ecobee
-  mode: single
-  icon: mdi:palette
 '1629140590814':
-  alias: Input Nintendo Switch
+  alias: Input Switch
   sequence:
   - data:
       source: TV
@@ -168,3 +103,61 @@
     data:
       source: Analog
   mode: single
+'1593284499412':
+  alias: Good Morning
+  sequence:
+  - service: input_select.select_next
+    data: {}
+    target:
+      entity_id:
+      - input_select.hue_scenes_day
+  - service: scene.turn_on
+    target:
+      entity_id:
+      - '{{ states(''input_select.hue_scenes_day'') }}'
+  - service: light.turn_on
+    target:
+      entity_id: light.yeelight_lightstrip
+    data:
+      effect: Home
+  - service: light.turn_on
+    data:
+      brightness: 178
+    target:
+      entity_id:
+      - light.hue_color_lamp_4
+  - service: climate.set_preset_mode
+    data:
+      preset_mode: Home
+    entity_id: climate.ecobee
+  mode: single
+  icon: mdi:palette
+'1593284499385':
+  alias: Arrive Home
+  sequence:
+  - service: input_select.select_next
+    data: {}
+    target:
+      entity_id:
+      - input_select.hue_scenes_night
+  - service: scene.turn_on
+    target:
+      entity_id:
+      - '{{ states(''input_select.hue_scenes_night'') }}'
+  - service: light.turn_on
+    target:
+      entity_id: light.yeelight_lightstrip
+    data:
+      effect: Date Night
+  - service: light.turn_on
+    data:
+      brightness: 128
+    target:
+      entity_id:
+      - light.hue_color_lamp_4
+  - service: climate.set_preset_mode
+    data:
+      preset_mode: Home
+    entity_id: climate.ecobee
+  mode: single
+  icon: mdi:palette

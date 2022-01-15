@@ -25,8 +25,7 @@
     platform: event
   condition: []
   action:
-  - service: script.1593284496392
-    data: {}
+  - service: script.1593284499385
   mode: single
 - id: '1592681712022'
   alias: 'Button: Double Press'
@@ -39,8 +38,7 @@
     platform: event
   condition: []
   action:
-  - service: script.1593284496148
-    data: {}
+  - service: script.1593284499412
   mode: single
 - id: '1592682345845'
   alias: 'Door: Opened'
