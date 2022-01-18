@@ -7,4 +7,8 @@
 
 .cloud
 .storage
+
 custom_components
+www/community
+themes/*
+!themes/non_hacs_themes

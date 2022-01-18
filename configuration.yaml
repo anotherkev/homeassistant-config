@@ -1,5 +1,4 @@
 default_config:
-scene: !include scenes.yaml
 script: !include scripts.yaml
 automation: !include automations.yaml
 frontend:
@@ -51,5 +50,5 @@ panel_iframe:
     icon: 'mdi:web'
   goaccess:
     title: 'GoAccess'
-    url: 'http://192.168.1.100:8889'
+    url: 'http://192.168.1.100:7889'
     icon: 'mdi:google-analytics'
