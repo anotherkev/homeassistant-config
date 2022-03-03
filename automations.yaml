@@ -71,10 +71,10 @@
     service: light.turn_off
   mode: single
 - id: '1592700804511'
-  alias: 'HA: Weekday, 08:30'
+  alias: 'HA: Weekday, 08:15'
   description: ''
   trigger:
-  - at: 08:30:00
+  - at: 08:15:00
     platform: time
   condition:
   - condition: time
@@ -84,23 +84,26 @@
     - wed
     - thu
     - fri
+    before: 00:00:00
   action:
   - service: script.1593284499412
     data: {}
   mode: single
 - id: '1592701058033'
-  alias: 'HA: Weekend, 09:30'
+  alias: 'HA: Weekend, 09:15'
   description: ''
   trigger:
-  - at: 09:30:00
+  - at: 09:15:00
     platform: time
   condition:
   - condition: time
     weekday:
     - sat
     - sun
+    before: 00:00:00
   action:
   - service: script.1593284499412
+    data: {}
   mode: single
 - id: '1593114769842'
   alias: 'HomeKit: TV Press Up'
@@ -225,22 +228,6 @@
   - service: frontend.set_theme
     data:
       name: Google Dark Theme
-  mode: single
-- id: '1602473852335'
-  alias: 'HA: HASS Update'
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.updater
-    to: 'on'
-  condition: []
-  action:
-  - service: persistent_notification.create
-    data:
-      notification_id: hass
-      title: HASS Updater
-      message: '{{ state_attr(''binary_sensor.updater'', ''newest_version'') }} available
-        from {{ state_attr(''binary_sensor.updater'', ''release_notes'') }}'
   mode: single
 - id: '1602474225975'
   alias: 'HA: HACS Update'

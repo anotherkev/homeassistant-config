@@ -211,8 +211,6 @@ views:
       - type: vertical-stack
         cards:
           - type: entity
-            entity: binary_sensor.hass_updater
-          - type: entity
             entity: sensor.hacs_updater
           - type: entities
             show_header_toggle: false
