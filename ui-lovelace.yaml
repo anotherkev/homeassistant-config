@@ -56,7 +56,8 @@ views:
                   - light.hue_signe_table_1
                   - light.hue_play_2
                   - light.hue_play_1
-                  - light.hue_color_lamp_4
+                  - light.hue_ambiance_lamp_1
+                  - light.hue_ambiance_lamp_2
                   - light.hue_color_lamp_1
                   - light.hue_color_lamp_3
                   - light.hue_color_lamp_2

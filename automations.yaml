@@ -10,8 +10,12 @@
   condition: []
   action:
   - type: toggle
-    device_id: 3327d85fbec0049ceec1d18b2716fe58
-    entity_id: light.hue_color_lamp_4
+    device_id: 4f5cac779a9f40e5b93badf0ea10592c
+    entity_id: light.hue_ambiance_lamp_1
+    domain: light
+  - type: toggle
+    device_id: f1deac94db05382dbf6f7703fff53a21
+    entity_id: light.hue_ambiance_lamp_2
     domain: light
   mode: single
 - id: '1592681633691'
