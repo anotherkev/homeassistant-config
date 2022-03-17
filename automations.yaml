@@ -249,3 +249,17 @@
       message: '{{ states(''sensor.hacs_updater'') }} {{ state_attr(''sensor.hacs_updater'',
         ''unit_of_measurement'') }}'
   mode: single
+- id: '1647479842660'
+  alias: 'HA: Songpal Retry'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: media_player.sony_bravia_soundbar
+    to: unavailable
+  condition: []
+  action:
+  - service: homeassistant.update_entity
+    data: {}
+    target:
+      entity_id: media_player.sony_bravia_soundbar
+  mode: single
