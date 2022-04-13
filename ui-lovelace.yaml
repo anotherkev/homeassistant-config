@@ -95,7 +95,7 @@ views:
             points_per_hour: 12
             hour24: true
             line_width: 2
-            height: 175
+            height: 160
             color_thresholds:
               - value: 0
                 color: "#786AAB"
@@ -154,7 +154,7 @@ views:
                 points_per_hour: 12
                 line_width: 2
                 hour24: true
-                height: 110
+                height: 100
                 state_map:
                   - value: "Off"
                   - value: "On"
@@ -188,7 +188,7 @@ views:
                 points_per_hour: 12
                 line_width: 2
                 hour24: true
-                height: 110
+                height: 100
           - type: custom:mini-graph-card
             entities:
               - entity: binary_sensor.motion_sensor_158d00015b8344
@@ -207,12 +207,10 @@ views:
                 label: "Alert"
 
   - title: Updater
-    icon: mdi:arrow-up-bold-circle
+    icon: mdi:information
     cards:
       - type: vertical-stack
         cards:
-          - type: entity
-            entity: sensor.hacs_updater
           - type: entities
             show_header_toggle: false
             state_color: true

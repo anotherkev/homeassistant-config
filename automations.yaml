@@ -75,10 +75,10 @@
     service: light.turn_off
   mode: single
 - id: '1592700804511'
-  alias: 'HA: Weekday, 08:15'
+  alias: 'HA: Weekday, 08:30'
   description: ''
   trigger:
-  - at: 08:15:00
+  - at: 08:30:00
     platform: time
   condition:
   - condition: time
@@ -89,6 +89,7 @@
     - thu
     - fri
     before: 00:00:00
+    after: 00:00:00
   action:
   - service: script.1593284499412
     data: {}
@@ -255,7 +256,7 @@
   trigger:
   - platform: state
     entity_id: media_player.sony_bravia_soundbar
-    to: unavailable
+    to: '''unavailable'''
   condition: []
   action:
   - service: homeassistant.update_entity

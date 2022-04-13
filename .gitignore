@@ -7,6 +7,7 @@
 
 .cloud
 .storage
+backups
 
 custom_components
 www/community
