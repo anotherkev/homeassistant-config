@@ -1,5 +1,5 @@
 '1592682876227':
-  alias: Resume Schedule
+  alias: Ecobee Resume Schedule
   sequence:
   - data:
       resume_all: true
@@ -163,3 +163,12 @@
     entity_id: climate.ecobee
   mode: single
   icon: mdi:palette
+'1654281377953':
+  alias: Ecobee Fan Hold
+  sequence:
+  - service: climate.set_fan_mode
+    data:
+      fan_mode: 'on'
+    target:
+      entity_id: climate.ecobee
+  mode: single
