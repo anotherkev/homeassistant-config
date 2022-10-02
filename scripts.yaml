@@ -9,6 +9,10 @@
 '1593284468001':
   alias: Input PS5
   sequence:
+  - service: homeassistant.update_entity
+    data: {}
+    target:
+      entity_id: media_player.sony_bravia_soundbar
   - data:
       entity_id: media_player.sony_bravia_soundbar
       source: HDMI1
@@ -24,6 +28,10 @@
 '1593284496702':
   alias: Input Apple TV
   sequence:
+  - service: homeassistant.update_entity
+    data: {}
+    target:
+      entity_id: media_player.sony_bravia_soundbar
   - service: media_player.select_source
     data:
       source: HDMI2
@@ -75,6 +83,10 @@
 '1629140590814':
   alias: Input Switch
   sequence:
+  - service: homeassistant.update_entity
+    data: {}
+    target:
+      entity_id: media_player.sony_bravia_soundbar
   - data:
       source: TV
     service: media_player.select_source
@@ -94,9 +106,14 @@
     device_id: 7566edaed63b2d30c24c2e0aa9aaabca
     entity_id: switch.koogeek_p1_6c79c0
     domain: switch
+  - service: homeassistant.update_entity
+    data: {}
+    target:
+      entity_id: media_player.sony_bravia_soundbar
   - service: media_player.turn_on
     target:
       entity_id: media_player.sony_bravia_soundbar
+    data: {}
   - service: media_player.select_source
     target:
       entity_id: media_player.sony_bravia_soundbar
@@ -171,4 +188,17 @@
       fan_mode: 'on'
     target:
       entity_id: climate.ecobee
+  mode: single
+input_tv:
+  alias: Input TV
+  sequence:
+  - service: homeassistant.update_entity
+    data: {}
+    target:
+      entity_id: media_player.sony_bravia_soundbar
+  - data:
+      source: TV
+    service: media_player.select_source
+    target:
+      entity_id: media_player.sony_bravia_soundbar
   mode: single
