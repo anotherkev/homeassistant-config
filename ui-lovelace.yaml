@@ -41,14 +41,14 @@ views:
                   - script.1593284499449
                   - script.1593284499385
                   - script.1593284499481
-                  - script.1592682876227
                   - script.1654281377953
+                  - script.1592682876227
                   - script.1593284496702
+                  - script.input_tv
                   - script.1593284468001
                   - script.1629140590814
                   - script.1593284495837
                   - switch.adguard_filtering
-                  - switch.koogeek_p1_6c79c0
               - type: entities
                 show_header_toggle: false
                 state_color: true
@@ -64,6 +64,7 @@ views:
                   - light.hue_color_lamp_2
                   - light.yeelight_lightstrip
                   - light.gateway_light_34ce00837eef
+                  - switch.koogeek_p1_6c79c0
 
       - type: vertical-stack
         cards:
