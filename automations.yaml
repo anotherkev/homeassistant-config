@@ -74,154 +74,6 @@
     entity_id: light.gateway_light_34ce00837eef
     service: light.turn_off
   mode: single
-- id: '1592700804511'
-  alias: 'HA: Weekday, 08:30'
-  description: ''
-  trigger:
-  - at: 08:30:00
-    platform: time
-  condition:
-  - condition: time
-    weekday:
-    - mon
-    - tue
-    - wed
-    - thu
-    - fri
-    before: 00:00:00
-    after: 00:00:00
-  action:
-  - service: script.1593284499412
-    data: {}
-  mode: single
-- id: '1592701058033'
-  alias: 'HA: Weekend, 09:15'
-  description: ''
-  trigger:
-  - at: 09:15:00
-    platform: time
-  condition:
-  - condition: time
-    weekday:
-    - sat
-    - sun
-    before: 00:00:00
-  action:
-  - service: script.1593284499412
-    data: {}
-  mode: single
-- id: '1593114769842'
-  alias: 'HomeKit: TV Press Up'
-  description: ''
-  trigger:
-  - event_data:
-      key_name: arrow_up
-    event_type: homekit_tv_remote_key_pressed
-    platform: event
-  condition: []
-  action:
-  - service: remote.send_command
-    target:
-      entity_id: remote.sony_bravia_tv
-    data:
-      command: Up
-  mode: single
-- id: '1593114925954'
-  alias: 'HomeKit: TV Press Down'
-  description: ''
-  trigger:
-  - event_data:
-      key_name: arrow_down
-    event_type: homekit_tv_remote_key_pressed
-    platform: event
-  condition: []
-  action:
-  - service: remote.send_command
-    target:
-      entity_id: remote.sony_bravia_tv
-    data:
-      command: Down
-  mode: single
-- id: '1593115135251'
-  alias: 'HomeKit: TV Press Left'
-  description: ''
-  trigger:
-  - event_data:
-      key_name: arrow_left
-    event_type: homekit_tv_remote_key_pressed
-    platform: event
-  condition: []
-  action:
-  - service: remote.send_command
-    target:
-      entity_id: remote.sony_bravia_tv
-    data:
-      command: Left
-  mode: single
-- id: '1593115219750'
-  alias: 'HomeKit: TV Press Right'
-  description: ''
-  trigger:
-  - event_data:
-      key_name: arrow_right
-    event_type: homekit_tv_remote_key_pressed
-    platform: event
-  condition: []
-  action:
-  - service: remote.send_command
-    target:
-      entity_id: remote.sony_bravia_tv
-    data:
-      command: Right
-  mode: single
-- id: '1593115379978'
-  alias: 'HomeKit: TV Press Back'
-  description: ''
-  trigger:
-  - event_data:
-      key_name: back
-    event_type: homekit_tv_remote_key_pressed
-    platform: event
-  condition: []
-  action:
-  - service: remote.send_command
-    data:
-      command: Return
-    target:
-      entity_id: remote.sony_bravia_tv
-  mode: single
-- id: '1593115485707'
-  alias: 'HomeKit: TV Press Select'
-  description: ''
-  trigger:
-  - event_data:
-      key_name: select
-    event_type: homekit_tv_remote_key_pressed
-    platform: event
-  condition: []
-  action:
-  - service: remote.send_command
-    target:
-      entity_id: remote.sony_bravia_tv
-    data:
-      command: Confirm
-  mode: single
-- id: '1593115589241'
-  alias: 'HomeKit: TV Press Info'
-  description: Mapped to Home
-  trigger:
-  - event_data:
-      key_name: information
-    event_type: homekit_tv_remote_key_pressed
-    platform: event
-  condition: []
-  action:
-  - service: remote.send_command
-    target:
-      entity_id: remote.sony_bravia_tv
-    data:
-      command: Home
-  mode: single
 - id: '1602469768741'
   alias: 'HA: Set Theme'
   description: ''
@@ -249,4 +101,22 @@
       title: HACS Updater
       message: '{{ states(''sensor.hacs_updater'') }} {{ state_attr(''sensor.hacs_updater'',
         ''unit_of_measurement'') }}'
+  mode: single
+- id: '1675044848290'
+  alias: 'HomeKit: TV Press'
+  description: ''
+  trigger:
+  - event_data: {}
+    event_type: homekit_tv_remote_key_pressed
+    platform: event
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      entity_id: remote.sony_bravia_tv
+    data_template:
+      command: '{% set key_map = {''arrow_right'': ''Right'', ''arrow_down'' : ''Down'',
+        ''arrow_left'': ''Left'', ''arrow_up'': ''Up'',  ''select'': ''Confirm'',
+        ''back'': ''Return'', ''information'': ''Home''} %} {{ key_map[trigger.event.data[''key_name'']]
+        }}'
   mode: single
