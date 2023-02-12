@@ -74,18 +74,6 @@
     entity_id: light.gateway_light_34ce00837eef
     service: light.turn_off
   mode: single
-- id: '1602469768741'
-  alias: 'HA: Set Theme'
-  description: ''
-  trigger:
-  - platform: homeassistant
-    event: start
-  condition: []
-  action:
-  - service: frontend.set_theme
-    data:
-      name: Google Dark Theme
-  mode: single
 - id: '1602474225975'
   alias: 'HA: HACS Update'
   description: ''

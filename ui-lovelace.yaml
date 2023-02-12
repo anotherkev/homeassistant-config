@@ -4,91 +4,198 @@ views:
     cards:
       - type: vertical-stack
         cards:
-          - type: entities
+        - type: grid
+          columns: 2
+          square: false
+          cards:
+            - type: tile
+              entity: script.1593284499412
+              tap_action:
+                action: toggle
+            - type: tile
+              entity: script.1593284499449
+              tap_action:
+                action: toggle
+            - type: tile
+              entity: script.1593284499385
+              tap_action:
+                action: toggle
+            - type: tile
+              entity: script.1593284499481
+              tap_action:
+                action: toggle
+        # - type: horizontal-stack
+        #   cards:
+        #     - type: button
+        #       entity: script.1593284496702
+        #       show_icon: true
+        #       show_name: false
+        #     - type: button
+        #       entity: script.1593284468001
+        #       show_icon: true
+        #       show_name: false
+        #     - type: button
+        #       entity: script.1629140590814
+        #       show_icon: true
+        #       show_name: false
+        #     - type: button
+        #       entity: script.1544281377929
+        #       show_icon: true
+        #       show_name: false
+        #     - type: button
+        #       entity: script.1593284495837
+        #       show_icon: true
+        #       show_name: false
+        - type: entities
+          entities:
+          - type: custom:mini-media-player
+            entity: media_player.sony_bravia_tv
+            artwork: cover
+            source: icon
+            info: scroll
+            volume_stateless: true
+            group: true
+            idle_view:
+              when_idle: true
+              when_standby: true
+          - type: custom:mini-media-player
+            entity: media_player.sony_bravia_soundbar
+            artwork: cover
+            source: icon
+            info: scroll
+            toggle_power: false
+            volume_stateless: true
+            group: true
+            idle_view:
+              when_idle: true
+              when_standby: true
+            hide:
+              volume: true
+              controls: true
+              power: true
+          - entity: switch.koogeek_p1_6c79c0
+          - type: buttons
             entities:
-            - type: custom:mini-media-player
-              entity: media_player.sony_bravia_tv
-              artwork: cover
-              source: icon
-              info: scroll
-              volume_stateless: true
-              group: true
-              idle_view:
-                when_idle: true
-                when_standby: true
-            - type: custom:mini-media-player
-              entity: media_player.sony_bravia_soundbar
-              artwork: cover
-              source: icon
-              info: scroll
-              toggle_power: false
-              volume_stateless: true
-              group: true
-              idle_view:
-                when_idle: true
-                when_standby: true
-              hide:
-                volume: true
-                controls: true
-                power: true
-          - type: horizontal-stack
-            cards:
-              - type: entities
-                show_header_toggle: false
-                state_color: true
-                entities:
-                  - script.1593284499412
-                  - script.1593284499449
-                  - script.1593284499385
-                  - script.1593284499481
-                  - script.1654281377953
-                  - script.1592682876227
-                  - script.1593284496702
-                  - script.input_tv
-                  - script.1593284468001
-                  - script.1629140590814
-                  - script.1593284495837
-                  - switch.adguard_filtering
-              - type: entities
-                show_header_toggle: false
-                state_color: true
-                entities:
-                  - light.hue_signe_table_2
-                  - light.hue_signe_table_1
-                  - light.hue_play_2
-                  - light.hue_play_1
-                  - light.hue_ambiance_lamp_1
-                  - light.hue_ambiance_lamp_2
-                  - light.hue_color_lamp_1
-                  - light.hue_color_lamp_3
-                  - light.hue_color_lamp_2
-                  - light.yeelight_lightstrip
-                  - light.gateway_light_34ce00837eef
-                  - switch.koogeek_p1_6c79c0
+              - entity: script.1593284496702
+                show_name: true
+                tap_action:
+                  action: toggle
+              - entity: script.1593284468001
+                show_name: true
+                tap_action:
+                  action: toggle
+              - entity: script.1544281377929
+                show_name: true
+                tap_action:
+                  action: toggle
+              - entity: script.1593284495837
+                show_name: true
+                tap_action:
+                  action: toggle
+              - entity: script.1629140590814
+                show_name: true
+                tap_action:
+                  action: toggle
+        - type: custom:simple-thermostat
+          entity: climate.ecobee
+          header: false
+          hide:
+            temperature: true
+            state: true
+          layout:
+            mode:
+              names: false
+              headings: false
+              icons: true
+          control:
+            preset:
+              'Home':
+                icon: mdi:home-import-outline
+              'Away':
+                icon: mdi:home-export-outline
+              'Sleep':
+                icon: mdi:power-sleep
+
+      - type: vertical-stack
+        cards:
+          - type: custom:mini-graph-card
+            entities:
+              - entity: sensor.living_room_temperature
+                name: Living Room
+                show_state: true
+                state_adaptive_color: true
+                show_fill: false
+                color: "#fcb137"
+              - entity: sensor.temperature_158d0001a2b637
+                name: Bedroom
+                show_state: true
+                state_adaptive_color: true
+                show_fill: false
+              - entity: sensor.temperature_158d00015813fd
+                name: Entrance
+                show_state: true
+                state_adaptive_color: true
+                show_fill: false
+              - entity: sensor.target_temperature
+                name: Target
+                show_state: false
+                state_adaptive_color: true
+                show_fill: false
+              - entity: sensor.hvac_action
+                y_axis: secondary
+                name: HVAC
+                show_state: false
+                state_adaptive_color: true
+                show_fill: false
+              - entity: sensor.fan_action
+                y_axis: secondary
+                name: Fan
+                show_state: false
+                state_adaptive_color: true
+                show_fill: false
+            name: Temperature
+            hours_to_show: 24
+            points_per_hour: 12
+            line_width: 2
+            hour24: true
+            height: 170
+            state_map:
+              - value: "Off"
+              - value: "On"
+              - value: "Cooling"
+              - value: "Idle"
+              - value: "Heating"
+            lower_bound: 17
+            upper_bound_secondary: 30
+          - type: custom:mini-graph-card
+            entities:
+              - entity: sensor.living_room_humidity
+                name: Living Room
+                show_state: true
+                state_adaptive_color: true
+                show_fill: false
+                color: "#fcb137"
+              - entity: sensor.humidity_158d0001a2b637
+                name: Bedroom
+                show_state: true
+                state_adaptive_color: true
+                show_fill: false
+              - entity: sensor.humidity_158d00015813fd
+                name: Entrance
+                show_state: true
+                state_adaptive_color: true
+                show_fill: false
+            name: Humidity
+            hours_to_show: 24
+            points_per_hour: 12
+            line_width: 2
+            hour24: true
+            height: 170
 
       - type: vertical-stack
         cards:
           - type: weather-forecast
             entity: weather.ecobee
-          - type: custom:simple-thermostat
-            entity: climate.ecobee
-            header: false
-            hide:
-              temperature: true
-              state: true
-            layout:
-              mode:
-                names: false
-                headings: false
-                icons: true
-            control:
-              preset:
-                'Home':
-                  icon: mdi:home-import-outline
-                'Away':
-                  icon: mdi:home-export-outline
-                'Sleep':
-                  icon: mdi:power-sleep
           - type: custom:mini-graph-card
             entities:
               - sensor.illumination_34ce00837eef
@@ -97,7 +204,7 @@ views:
             points_per_hour: 12
             hour24: true
             line_width: 2
-            height: 160
+            height: 170
             color_thresholds:
               - value: 0
                 color: "#786AAB"
@@ -111,86 +218,6 @@ views:
                 color: "#FF7D08"
               - value: 1000
                 color: "#FD6400"
-
-      - type: vertical-stack
-        cards:
-          - type: horizontal-stack
-            cards:
-              - type: custom:mini-graph-card
-                entities:
-                  - entity: sensor.living_room_temperature
-                    name: Living Room
-                    show_state: true
-                    state_adaptive_color: true
-                    show_fill: false
-                    color: "#fcb137"
-                  - entity: sensor.temperature_158d0001a2b637
-                    name: Bedroom
-                    show_state: true
-                    state_adaptive_color: true
-                    show_fill: false
-                  - entity: sensor.temperature_158d00015813fd
-                    name: Entrance
-                    show_state: true
-                    state_adaptive_color: true
-                    show_fill: false
-                  - entity: sensor.target_temperature
-                    name: Target
-                    show_state: false
-                    state_adaptive_color: true
-                    show_fill: false
-                  - entity: sensor.hvac_action
-                    y_axis: secondary
-                    name: HVAC
-                    show_state: false
-                    state_adaptive_color: true
-                    show_fill: false
-                  - entity: sensor.fan_action
-                    y_axis: secondary
-                    name: Fan
-                    show_state: false
-                    state_adaptive_color: true
-                    show_fill: false
-                name: Temperature
-                hours_to_show: 24
-                points_per_hour: 12
-                line_width: 2
-                hour24: true
-                height: 100
-                state_map:
-                  - value: "Off"
-                  - value: "On"
-                  - value: "Cooling"
-                  - value: "Idle"
-                  - value: "Heating"
-                lower_bound: 17
-                upper_bound_secondary: 30
-          - type: horizontal-stack
-            cards:
-              - type: custom:mini-graph-card
-                entities:
-                  - entity: sensor.living_room_humidity
-                    name: Living Room
-                    show_state: true
-                    state_adaptive_color: true
-                    show_fill: false
-                    color: "#fcb137"
-                  - entity: sensor.humidity_158d0001a2b637
-                    name: Bedroom
-                    show_state: true
-                    state_adaptive_color: true
-                    show_fill: false
-                  - entity: sensor.humidity_158d00015813fd
-                    name: Entrance
-                    show_state: true
-                    state_adaptive_color: true
-                    show_fill: false
-                name: Humidity
-                hours_to_show: 24
-                points_per_hour: 12
-                line_width: 2
-                hour24: true
-                height: 100
           - type: custom:mini-graph-card
             entities:
               - entity: binary_sensor.motion_sensor_158d00015b8344
@@ -201,47 +228,78 @@ views:
             points_per_hour: 12
             aggregate_func: max
             line_width: 2
-            height: 17
+            height: 20
             state_map:
               - value: "off"
                 label: "Clear"
               - value: "on"
                 label: "Alert"
 
-  - title: Updater
+  - title: Information
     icon: mdi:information
     cards:
       - type: vertical-stack
         cards:
           - type: entities
-            show_header_toggle: false
-            state_color: true
             entities:
-              - sensor.canon_ts3400_series_black
-              - sensor.canon_ts3400_series_color
-          - type: entities
-            show_header_toggle: false
-            state_color: true
-            entities:
-              - sensor.battery_158d0001839557
-              - sensor.battery_158d000125cd3f
-              - sensor.battery_158d00015b8344
-              - sensor.battery_158d00015813fd
-              - sensor.battery_158d0001a2b637
+              - entity: script.1654281377953
+              - entity: script.1592682876227
+              - type: divider
+              - entity: scene.studio_spring_blossom
+              - entity: scene.studio_savanna_sunset
+              - entity: scene.studio_ocean_dawn
+              - type: divider
+              - entity: scene.studio_arctic_aurora
+              - entity: scene.studio_fairfax
+              - entity: scene.studio_sundown
+              - entity: scene.studio_tokyo
+              - entity: scene.studio_tropical_twilight
+              - entity: scene.studio_amber_bloom
+              - entity: scene.studio_disturbia
 
       - type: vertical-stack
         cards:
           - type: entities
-            show_header_toggle: false
             state_color: true
             entities:
-              - sensor.speedtest_download
-              - sensor.speedtest_upload
-              - sensor.speedtest_ping
+              - entity: light.hue_signe_table_2
+              - entity: light.hue_signe_table_1
+              - entity: light.hue_play_2
+              - entity: light.hue_play_1
+              - type: divider
+              - entity: light.hue_ambiance_lamp_1
+              - entity: light.hue_ambiance_lamp_2
+              - type: divider
+              - entity: light.hue_color_lamp_1
+              - entity: light.hue_color_lamp_3
+              - entity: light.hue_color_lamp_2
+              - entity: light.yeelight_lightstrip
+              - type: divider
+              - entity: light.gateway_light_34ce00837eef
+
+      - type: vertical-stack
+        cards:
           - type: entities
-            show_header_toggle: false
             state_color: true
             entities:
-              - sensor.adguard_dns_queries
-              - sensor.adguard_dns_queries_blocked_ratio
-              - sensor.adguard_average_processing_speed
+              - entity: switch.adguard_filtering
+              - entity: sensor.adguard_dns_queries
+              - entity: sensor.adguard_dns_queries_blocked_ratio
+              - entity: sensor.adguard_average_processing_speed
+              - type: divider
+              - entity: sensor.speedtest_download
+              - entity: sensor.speedtest_upload
+              - entity: sensor.speedtest_ping
+
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.battery_158d0001839557
+              - entity: sensor.battery_158d000125cd3f
+              - entity: sensor.battery_158d00015b8344
+              - entity: sensor.battery_158d00015813fd
+              - entity: sensor.battery_158d0001a2b637
+              - type: divider
+              - entity: sensor.canon_ts3400_series_black
+              - entity: sensor.canon_ts3400_series_color

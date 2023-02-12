@@ -1,13 +1,14 @@
 '1592682876227':
-  alias: Ecobee Resume Schedule
+  alias: 'Thermostat: Resume'
   sequence:
   - data:
       resume_all: true
     entity_id: climate.ecobee
     service: ecobee.resume_program
   mode: single
+  icon: mdi:thermostat
 '1593284468001':
-  alias: Input PS5
+  alias: 'Source: PlayStation'
   sequence:
   - service: homeassistant.update_entity
     data: {}
@@ -25,8 +26,9 @@
       entity_id:
       - media_player.sony_bravia_tv
   mode: single
+  icon: mdi:sony-playstation
 '1593284496702':
-  alias: Input Apple TV
+  alias: 'Source: Apple TV'
   sequence:
   - service: homeassistant.update_entity
     data: {}
@@ -44,6 +46,7 @@
       entity_id:
       - media_player.sony_bravia_tv
   mode: single
+  icon: mdi:apple
 '1593284499481':
   alias: Leave Home
   sequence:
@@ -53,6 +56,7 @@
       - bedroom
       - entrance
       - living_room
+    data: {}
   - service: climate.set_preset_mode
     data:
       preset_mode: Away
@@ -61,7 +65,7 @@
     data: {}
     entity_id: media_player.sony_bravia_tv
   mode: single
-  icon: mdi:palette
+  icon: mdi:home-export-outline
 '1593284499449':
   alias: Good Night
   sequence:
@@ -71,6 +75,7 @@
       - bedroom
       - entrance
       - living_room
+    data: {}
   - service: climate.set_preset_mode
     data:
       preset_mode: Sleep
@@ -79,9 +84,9 @@
     data: {}
     entity_id: media_player.sony_bravia_tv
   mode: single
-  icon: mdi:palette
+  icon: mdi:weather-night
 '1629140590814':
-  alias: Input Switch
+  alias: 'Source: Nintendo Switch'
   sequence:
   - service: homeassistant.update_entity
     data: {}
@@ -99,8 +104,9 @@
     target:
       entity_id: media_player.sony_bravia_tv
   mode: single
+  icon: mdi:nintendo-switch
 '1593284495837':
-  alias: Input Turntable
+  alias: 'Source: Turntable'
   sequence:
   - type: turn_on
     device_id: 7566edaed63b2d30c24c2e0aa9aaabca
@@ -120,11 +126,13 @@
     data:
       source: Analog
   mode: single
+  icon: mdi:record-player
 '1593284499412':
   alias: Good Morning
   sequence:
   - service: input_select.select_next
-    data: {}
+    data:
+      cycle: true
     target:
       entity_id:
       - input_select.hue_scenes_day
@@ -149,12 +157,13 @@
       preset_mode: Home
     entity_id: climate.ecobee
   mode: single
-  icon: mdi:palette
+  icon: mdi:weather-sunset-up
 '1593284499385':
   alias: Arrive Home
   sequence:
   - service: input_select.select_next
-    data: {}
+    data:
+      cycle: true
     target:
       entity_id:
       - input_select.hue_scenes_night
@@ -179,9 +188,9 @@
       preset_mode: Home
     entity_id: climate.ecobee
   mode: single
-  icon: mdi:palette
+  icon: mdi:home-import-outline
 '1654281377953':
-  alias: Ecobee Fan Hold
+  alias: 'Thermostat: Fan Hold'
   sequence:
   - service: climate.set_fan_mode
     data:
@@ -189,8 +198,9 @@
     target:
       entity_id: climate.ecobee
   mode: single
-input_tv:
-  alias: Input TV
+  icon: mdi:thermostat
+'1544281377929':
+  alias: 'Source: YouTube'
   sequence:
   - service: homeassistant.update_entity
     data: {}
@@ -201,4 +211,11 @@ input_tv:
     service: media_player.select_source
     target:
       entity_id: media_player.sony_bravia_soundbar
+  - service: media_player.play_media
+    target:
+      entity_id: media_player.sony_bravia_tv
+    data:
+      media_content_id: STN Beta
+      media_content_type: app
   mode: single
+  icon: mdi:youtube
