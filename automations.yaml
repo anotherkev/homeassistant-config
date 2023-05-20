@@ -1,81 +1,5 @@
-- id: '1592681047280'
-  alias: 'Button: Single Press'
-  description: ''
-  trigger:
-  - event_data:
-      entity_id: binary_sensor.switch_158d0001839557
-      click_type: single
-    event_type: xiaomi_aqara.click
-    platform: event
-  condition: []
-  action:
-  - type: toggle
-    device_id: 4f5cac779a9f40e5b93badf0ea10592c
-    entity_id: light.hue_ambiance_lamp_1
-    domain: light
-  - type: toggle
-    device_id: f1deac94db05382dbf6f7703fff53a21
-    entity_id: light.hue_ambiance_lamp_2
-    domain: light
-  mode: single
-- id: '1592681633691'
-  alias: 'Button: Long Press'
-  description: ''
-  trigger:
-  - event_data:
-      entity_id: binary_sensor.switch_158d0001839557
-      click_type: long_click_press
-    event_type: xiaomi_aqara.click
-    platform: event
-  condition: []
-  action:
-  - service: script.1593284499385
-  mode: single
-- id: '1592681712022'
-  alias: 'Button: Double Press'
-  description: ''
-  trigger:
-  - event_data:
-      entity_id: binary_sensor.switch_158d0001839557
-      click_type: double
-    event_type: xiaomi_aqara.click
-    platform: event
-  condition: []
-  action:
-  - service: script.1593284499412
-  mode: single
-- id: '1592682345845'
-  alias: 'Door: Opened'
-  description: ''
-  trigger:
-  - entity_id: binary_sensor.door_window_sensor_158d000125cd3f
-    platform: state
-    to: 'on'
-  condition: []
-  action:
-  - data:
-      rgb_color:
-      - 255
-      - 0
-      - 0
-    entity_id: light.gateway_light_34ce00837eef
-    service: light.turn_on
-  mode: single
-- id: '1592682461146'
-  alias: 'Door: Closed'
-  description: ''
-  trigger:
-  - entity_id: binary_sensor.door_window_sensor_158d000125cd3f
-    platform: state
-    to: 'off'
-  condition: []
-  action:
-  - data: {}
-    entity_id: light.gateway_light_34ce00837eef
-    service: light.turn_off
-  mode: single
 - id: '1602474225975'
-  alias: 'HA: HACS Update'
+  alias: 'Notification: HACS Update'
   description: ''
   trigger:
   - platform: numeric_state
@@ -83,15 +7,19 @@
     above: '0'
   condition: []
   action:
-  - service: persistent_notification.create
+  - service: notify.persistent_notification
     data:
-      notification_id: hacs
-      title: HACS Updater
+      title: HACS Update
       message: '{{ states(''sensor.hacs_updater'') }} {{ state_attr(''sensor.hacs_updater'',
         ''unit_of_measurement'') }}'
+  - service: notify.ecobee
+    data:
+      message: '{{ states(''sensor.hacs_updater'') }} {{ state_attr(''sensor.hacs_updater'',
+        ''unit_of_measurement'') }}'
+      target: 0
   mode: single
 - id: '1675044848290'
-  alias: 'HomeKit: TV Press'
+  alias: 'Automation: HomeKit Remote'
   description: ''
   trigger:
   - event_data: {}
@@ -107,4 +35,139 @@
         ''arrow_left'': ''Left'', ''arrow_up'': ''Up'',  ''select'': ''Confirm'',
         ''back'': ''Return'', ''information'': ''Home''} %} {{ key_map[trigger.event.data[''key_name'']]
         }}'
+  mode: single
+- id: '1676219292630'
+  alias: 'Automation: Soundbar Retry'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - media_player.sony_bravia_soundbar
+    to: unavailable
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+  condition: []
+  action:
+  - repeat:
+      while:
+      - condition: state
+        entity_id: media_player.sony_bravia_soundbar
+        state: unavailable
+      sequence:
+      - service: homeassistant.update_entity
+        data: {}
+        target:
+          entity_id: media_player.sony_bravia_soundbar
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 30
+          milliseconds: 0
+  mode: single
+- id: '1676749516511'
+  alias: 'Notification: Synology Webhook'
+  description: ''
+  trigger:
+  - platform: webhook
+    webhook_id: -N6sCfSeacLHxc9gZrCFqAFKA
+    allowed_methods:
+    - POST
+    - PUT
+    local_only: true
+  condition: []
+  action:
+  - service: notify.persistent_notification
+    data:
+      title: Synology Webhook
+      message: '{{trigger.json.msg}}'
+  - service: notify.ecobee
+    data:
+      message: '{{trigger.json.msg}}'
+      target: 0
+  mode: single
+- id: '1676819806681'
+  alias: 'Notification: Cert Expiry'
+  description: ''
+  trigger:
+  - platform: template
+    value_template: '{{ as_datetime(states(''sensor.cert_expiry_timestamp_anotherkev_com''))
+      - utcnow() < timedelta(days = 7)}}'
+  condition: []
+  action:
+  - service: notify.persistent_notification
+    data:
+      title: Cert Expiry
+      message: '{{ state_attr(''sensor.cert_expiry_timestamp_anotherkev_com'',''friendly_name'')
+        }} {{''\n''}} {{ as_datetime(states(''sensor.cert_expiry_timestamp_anotherkev_com''))
+        | as_local() }}'
+  - service: notify.ecobee
+    data:
+      message: '{{ state_attr(''sensor.cert_expiry_timestamp_anotherkev_com'',''friendly_name'')
+        }} {{''\n''}} {{ as_datetime(states(''sensor.cert_expiry_timestamp_anotherkev_com''))
+        | as_local() }}'
+      target: 0
+  mode: single
+- id: '1676825787825'
+  alias: 'Automation: Button'
+  description: ''
+  trigger:
+  - event_type: xiaomi_aqara.click
+    platform: event
+  condition:
+  - condition: template
+    value_template: '{{ trigger.event.data[''entity_id''] == ''binary_sensor.switch_158d0001839557''
+      }}'
+  action:
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.event.data[''click_type''] == ''single'' }}'
+      sequence:
+      - type: toggle
+        device_id: f1deac94db05382dbf6f7703fff53a21
+        entity_id: light.hue_ambiance_lamp_2
+        domain: light
+        enabled: true
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.event.data[''click_type''] == ''double'' }}'
+      sequence:
+      - service: script.1593284499412
+        data: {}
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.event.data[''click_type''] == ''long_click_press''
+          }}'
+      sequence:
+      - service: script.1593284499385
+        data: {}
+  mode: single
+- id: '1676827020196'
+  alias: 'Automation: Door'
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.door_window_sensor_158d000125cd3f
+    platform: state
+  condition: []
+  action:
+  - if:
+    - condition: state
+      entity_id: binary_sensor.door_window_sensor_158d000125cd3f
+      state: 'on'
+    then:
+    - service: light.turn_on
+      data:
+        rgb_color:
+        - 255
+        - 0
+        - 0
+        brightness_pct: 100
+      target:
+        entity_id: light.gateway_light_34ce00837eef
+    else:
+    - service: light.turn_off
+      entity_id: light.gateway_light_34ce00837eef
+      data: {}
   mode: single

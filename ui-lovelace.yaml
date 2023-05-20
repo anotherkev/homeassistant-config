@@ -72,7 +72,7 @@ views:
             hide:
               volume: true
               controls: true
-              power: true
+              # power: true
           - entity: switch.koogeek_p1_6c79c0
           - type: buttons
             entities:
@@ -114,7 +114,7 @@ views:
               'Away':
                 icon: mdi:home-export-outline
               'Sleep':
-                icon: mdi:power-sleep
+                icon: mdi:weather-night
 
       - type: vertical-stack
         cards:
@@ -290,6 +290,8 @@ views:
               - entity: sensor.speedtest_download
               - entity: sensor.speedtest_upload
               - entity: sensor.speedtest_ping
+              - type: divider
+              - entity: sensor.cert_expiry_timestamp_anotherkev_com
 
       - type: vertical-stack
         cards:
@@ -303,3 +305,5 @@ views:
               - type: divider
               - entity: sensor.canon_ts3400_series_black
               - entity: sensor.canon_ts3400_series_color
+              - type: divider
+              - entity: sensor.hacs_updater

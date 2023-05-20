@@ -150,7 +150,6 @@
       brightness: 128
     target:
       entity_id:
-      - light.hue_ambiance_lamp_1
       - light.hue_ambiance_lamp_2
   - service: climate.set_preset_mode
     data:
@@ -181,7 +180,6 @@
       brightness: 102
     target:
       entity_id:
-      - light.hue_ambiance_lamp_1
       - light.hue_ambiance_lamp_2
   - service: climate.set_preset_mode
     data:
