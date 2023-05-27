@@ -56,7 +56,8 @@
       - bedroom
       - entrance
       - living_room
-    data: {}
+    data:
+      transition: 1
   - service: climate.set_preset_mode
     data:
       preset_mode: Away
@@ -75,7 +76,8 @@
       - bedroom
       - entrance
       - living_room
-    data: {}
+    data:
+      transition: 1
   - service: climate.set_preset_mode
     data:
       preset_mode: Sleep
@@ -130,27 +132,8 @@
 '1593284499412':
   alias: Good Morning
   sequence:
-  - service: input_select.select_next
-    data:
-      cycle: true
-    target:
-      entity_id:
-      - input_select.hue_scenes_day
-  - service: scene.turn_on
-    target:
-      entity_id:
-      - '{{ states(''input_select.hue_scenes_day'') }}'
-  - service: light.turn_on
-    target:
-      entity_id: light.yeelight_lightstrip
-    data:
-      effect: Home
-  - service: light.turn_on
-    data:
-      brightness: 128
-    target:
-      entity_id:
-      - light.hue_ambiance_lamp_2
+  - service: script.1684781465122
+    data: {}
   - service: climate.set_preset_mode
     data:
       preset_mode: Home
@@ -160,24 +143,12 @@
 '1593284499385':
   alias: Arrive Home
   sequence:
-  - service: input_select.select_next
-    data:
-      cycle: true
-    target:
-      entity_id:
-      - input_select.hue_scenes_night
-  - service: scene.turn_on
-    target:
-      entity_id:
-      - '{{ states(''input_select.hue_scenes_night'') }}'
-  - service: light.turn_on
-    target:
-      entity_id: light.yeelight_lightstrip
-    data:
-      effect: Date Night
+  - service: script.1684781523698
+    data: {}
   - service: light.turn_on
     data:
-      brightness: 102
+      brightness_pct: 25
+      transition: 1
     target:
       entity_id:
       - light.hue_ambiance_lamp_2
@@ -217,3 +188,47 @@
       media_content_type: app
   mode: single
   icon: mdi:youtube
+'1684781465122':
+  alias: Day Scenes
+  sequence:
+  - service: input_select.select_next
+    data:
+      cycle: true
+    target:
+      entity_id:
+      - input_select.hue_scenes_day
+  - service: hue.activate_scene
+    data:
+      transition: 1
+    target:
+      entity_id: '{{ states(''input_select.hue_scenes_day'') }}'
+  - service: light.turn_on
+    target:
+      entity_id: light.yeelight_lightstrip
+    data:
+      effect: Home
+      transition: 1
+  mode: single
+  icon: mdi:ghost
+'1684781523698':
+  alias: Night Scenes
+  sequence:
+  - service: input_select.select_next
+    data:
+      cycle: true
+    target:
+      entity_id:
+      - input_select.hue_scenes_night
+  - service: hue.activate_scene
+    data:
+      transition: 1
+    target:
+      entity_id: '{{ states(''input_select.hue_scenes_night'') }}'
+  - service: light.turn_on
+    target:
+      entity_id: light.yeelight_lightstrip
+    data:
+      effect: Date Night
+      transition: 1
+  mode: single
+  icon: mdi:heart-box-outline

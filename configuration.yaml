@@ -16,6 +16,15 @@ lovelace:
     - url: /hacsfiles/lovelace-mushroom/mushroom.js
       type: module
 
+influxdb:
+  api_version: 2
+  ssl: false
+  host: !secret hostname
+  port: 8086
+  token: !secret ha-influxdb-token
+  organization: home
+  bucket: Home Assistant
+
 sensor:
   - platform: template
     sensors:
@@ -54,3 +63,7 @@ panel_iframe:
     title: 'GoAccess'
     url: 'http://192.168.1.100:7889'
     icon: 'mdi:google-analytics'
+  influxdb:
+    title: 'InfluxDB'
+    url: 'http://192.168.1.100:8086/'
+    icon: 'mdi:database'

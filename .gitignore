@@ -8,6 +8,7 @@
 .cloud
 .storage
 backups
+secrets.yaml
 
 custom_components
 www/community

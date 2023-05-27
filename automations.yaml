@@ -125,23 +125,35 @@
       - condition: template
         value_template: '{{ trigger.event.data[''click_type''] == ''single'' }}'
       sequence:
-      - type: toggle
-        device_id: f1deac94db05382dbf6f7703fff53a21
-        entity_id: light.hue_ambiance_lamp_2
-        domain: light
-        enabled: true
+      - if:
+        - condition: template
+          value_template: '{{ state_attr(''light.hue_ambiance_lamp_2'', ''brightness'')
+            == 255 }} '
+        then:
+        - service: light.turn_off
+          data:
+            transition: 1
+          target:
+            entity_id: light.hue_ambiance_lamp_2
+        else:
+        - service: light.turn_on
+          data:
+            brightness_step_pct: 25
+            transition: 1
+          target:
+            entity_id: light.hue_ambiance_lamp_2
     - conditions:
       - condition: template
         value_template: '{{ trigger.event.data[''click_type''] == ''double'' }}'
       sequence:
-      - service: script.1593284499412
+      - service: script.1684781465122
         data: {}
     - conditions:
       - condition: template
         value_template: '{{ trigger.event.data[''click_type''] == ''long_click_press''
           }}'
       sequence:
-      - service: script.1593284499385
+      - service: script.1684781523698
         data: {}
   mode: single
 - id: '1676827020196'

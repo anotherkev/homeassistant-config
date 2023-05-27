@@ -4,10 +4,21 @@ views:
     cards:
       - type: vertical-stack
         cards:
+        - type: weather-forecast
+          entity: weather.ecobee
+          show_forecast: false
         - type: grid
           columns: 2
           square: false
           cards:
+            - type: tile
+              entity: script.1684781465122
+              tap_action:
+                action: toggle
+            - type: tile
+              entity: script.1684781523698
+              tap_action:
+                action: toggle
             - type: tile
               entity: script.1593284499412
               tap_action:
@@ -72,7 +83,6 @@ views:
             hide:
               volume: true
               controls: true
-              # power: true
           - entity: switch.koogeek_p1_6c79c0
           - type: buttons
             entities:
@@ -96,25 +106,6 @@ views:
                 show_name: true
                 tap_action:
                   action: toggle
-        - type: custom:simple-thermostat
-          entity: climate.ecobee
-          header: false
-          hide:
-            temperature: true
-            state: true
-          layout:
-            mode:
-              names: false
-              headings: false
-              icons: true
-          control:
-            preset:
-              'Home':
-                icon: mdi:home-import-outline
-              'Away':
-                icon: mdi:home-export-outline
-              'Sleep':
-                icon: mdi:weather-night
 
       - type: vertical-stack
         cards:
@@ -194,8 +185,25 @@ views:
 
       - type: vertical-stack
         cards:
-          - type: weather-forecast
-            entity: weather.ecobee
+          - type: custom:simple-thermostat
+            entity: climate.ecobee
+            header: false
+            hide:
+              temperature: true
+              state: true
+            layout:
+              mode:
+                names: false
+                headings: false
+                icons: true
+            control:
+              preset:
+                'Home':
+                  icon: mdi:home-import-outline
+                'Away':
+                  icon: mdi:home-export-outline
+                'Sleep':
+                  icon: mdi:weather-night
           - type: custom:mini-graph-card
             entities:
               - sensor.illumination_34ce00837eef
@@ -204,7 +212,7 @@ views:
             points_per_hour: 12
             hour24: true
             line_width: 2
-            height: 170
+            height: 160
             color_thresholds:
               - value: 0
                 color: "#786AAB"
@@ -245,17 +253,13 @@ views:
               - entity: script.1654281377953
               - entity: script.1592682876227
               - type: divider
-              - entity: scene.studio_spring_blossom
-              - entity: scene.studio_savanna_sunset
-              - entity: scene.studio_ocean_dawn
-              - type: divider
-              - entity: scene.studio_arctic_aurora
-              - entity: scene.studio_fairfax
-              - entity: scene.studio_sundown
-              - entity: scene.studio_tokyo
-              - entity: scene.studio_tropical_twilight
               - entity: scene.studio_amber_bloom
+              - entity: scene.studio_ocean_dawn
+              - entity: scene.studio_tropical_twilight
+              - type: divider
               - entity: scene.studio_disturbia
+              - entity: scene.studio_sundown
+              - entity: scene.studio_fairfax
 
       - type: vertical-stack
         cards:
