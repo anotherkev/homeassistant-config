@@ -296,6 +296,7 @@ views:
               - entity: sensor.speedtest_ping
               - type: divider
               - entity: sensor.cert_expiry_timestamp_anotherkev_com
+              - entity: sensor.hacs_updater
 
       - type: vertical-stack
         cards:
@@ -307,7 +308,8 @@ views:
               - entity: sensor.battery_158d00015813fd
               - entity: sensor.battery_158d0001a2b637
               - type: divider
+              - entity: sensor.ups_battery_charge
+              - entity: sensor.ups_load
+              - type: divider
               - entity: sensor.canon_ts3400_series_black
               - entity: sensor.canon_ts3400_series_color
-              - type: divider
-              - entity: sensor.hacs_updater

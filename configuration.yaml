@@ -49,6 +49,21 @@ sensor:
           {% if is_state_attr('climate.ecobee', 'fan', 'on') %} On
           {% else %} Off
           {% endif %}
+      ups_real_time_energy:
+        unique_id: ups_real_time_energy
+        friendly_name: 'UPS Real time energy'
+        unit_of_measurement: W
+        device_class: power
+        value_template:  >
+          {{ (states('sensor.ups_load') | float) / 100 * 330 }}
+
+media_player:
+  - platform: universal
+    name: Sony BRAVIA Soundbar
+    unique_id: sony_bravia_soundbar_receiver
+    children:
+      - media_player.sony_bravia_soundbar
+    device_class: receiver
 
 panel_iframe:
   adguard_home:
