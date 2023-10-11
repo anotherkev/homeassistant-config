@@ -12,6 +12,7 @@
       title: HACS Update
       message: '{{ states(''sensor.hacs_updater'') }} {{ state_attr(''sensor.hacs_updater'',
         ''unit_of_measurement'') }}'
+    enabled: false
   - service: notify.ecobee
     data:
       message: '{{ states(''sensor.hacs_updater'') }} {{ state_attr(''sensor.hacs_updater'',
@@ -82,6 +83,7 @@
     data:
       title: Synology Webhook
       message: '{{trigger.json.msg}}'
+    enabled: false
   - service: notify.ecobee
     data:
       message: '{{trigger.json.msg}}'
@@ -102,6 +104,7 @@
       message: '{{ state_attr(''sensor.cert_expiry_timestamp_anotherkev_com'',''friendly_name'')
         }} {{''\n''}} {{ as_datetime(states(''sensor.cert_expiry_timestamp_anotherkev_com''))
         | as_local() }}'
+    enabled: false
   - service: notify.ecobee
     data:
       message: '{{ state_attr(''sensor.cert_expiry_timestamp_anotherkev_com'',''friendly_name'')
