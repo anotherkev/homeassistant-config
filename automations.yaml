@@ -186,3 +186,36 @@
       entity_id: light.gateway_light_34ce00837eef
       data: {}
   mode: single
+- id: '1697054346762'
+  alias: 'Automation: Motion'
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 9c72568d03d59ca8db1404dcb7e09e04
+    entity_id: 6ec8f62681b26b33ad94b005b162279b
+    domain: binary_sensor
+  condition:
+  - condition: sun
+    after: sunset
+    before: sunrise
+  action:
+  - service: light.turn_on
+    data:
+      rgb_color:
+      - 255
+      - 191
+      - 140
+      brightness_pct: 40
+    target:
+      entity_id: light.gateway_light_34ce00837eef
+  - delay:
+      hours: 0
+      minutes: 1
+      seconds: 30
+      milliseconds: 0
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id: light.gateway_light_34ce00837eef
+  mode: single

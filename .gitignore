@@ -8,6 +8,7 @@
 .cloud
 .storage
 backups
+image
 secrets.yaml
 
 custom_components
