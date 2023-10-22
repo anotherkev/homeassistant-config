@@ -64,6 +64,12 @@ media_player:
     children:
       - media_player.sony_bravia_soundbar
     device_class: receiver
+    commands:
+      turn_on:
+        service: media_player.turn_on
+        data: {}
+        target:
+          entity_id: media_player.sony_bravia_soundbar
 
 panel_iframe:
   adguard_home:

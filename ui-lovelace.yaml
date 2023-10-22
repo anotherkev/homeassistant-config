@@ -35,28 +35,6 @@ views:
               entity: script.1593284499481
               tap_action:
                 action: toggle
-        # - type: horizontal-stack
-        #   cards:
-        #     - type: button
-        #       entity: script.1593284496702
-        #       show_icon: true
-        #       show_name: false
-        #     - type: button
-        #       entity: script.1593284468001
-        #       show_icon: true
-        #       show_name: false
-        #     - type: button
-        #       entity: script.1629140590814
-        #       show_icon: true
-        #       show_name: false
-        #     - type: button
-        #       entity: script.1544281377929
-        #       show_icon: true
-        #       show_name: false
-        #     - type: button
-        #       entity: script.1593284495837
-        #       show_icon: true
-        #       show_name: false
         - type: entities
           entities:
           - type: custom:mini-media-player
@@ -84,28 +62,50 @@ views:
               volume: true
               controls: true
           - entity: switch.koogeek_p1_6c79c0
-          - type: buttons
-            entities:
-              - entity: script.1593284496702
-                show_name: true
-                tap_action:
-                  action: toggle
-              - entity: script.1593284468001
-                show_name: true
-                tap_action:
-                  action: toggle
-              - entity: script.1544281377929
-                show_name: true
-                tap_action:
-                  action: toggle
-              - entity: script.1593284495837
-                show_name: true
-                tap_action:
-                  action: toggle
-              - entity: script.1629140590814
-                show_name: true
-                tap_action:
-                  action: toggle
+          # - type: buttons
+          #   entities:
+          #     - entity: script.1593284496702
+          #       show_name: true
+          #       tap_action:
+          #         action: toggle
+          #     - entity: script.1593284468001
+          #       show_name: true
+          #       tap_action:
+          #         action: toggle
+          #     - entity: script.1544281377929
+          #       show_name: true
+          #       tap_action:
+          #         action: toggle
+          #     - entity: script.1593284495837
+          #       show_name: true
+          #       tap_action:
+          #         action: toggle
+          #     - entity: script.1629140590814
+          #       show_name: true
+          #       tap_action:
+          #         action: toggle
+        - type: horizontal-stack
+          cards:
+            - type: button
+              entity: script.1593284496702
+              show_icon: true
+              show_name: false
+            - type: button
+              entity: script.1593284468001
+              show_icon: true
+              show_name: false
+            - type: button
+              entity: script.1544281377929
+              show_icon: true
+              show_name: false
+            - type: button
+              entity: script.1593284495837
+              show_icon: true
+              show_name: false
+            - type: button
+              entity: script.1629140590814
+              show_icon: true
+              show_name: false
 
       - type: vertical-stack
         cards:
@@ -260,6 +260,7 @@ views:
               - entity: scene.studio_disturbia
               - entity: scene.studio_sundown
               - entity: scene.studio_fairfax
+              - entity: scene.studio_soho
 
       - type: vertical-stack
         cards:
