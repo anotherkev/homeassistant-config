@@ -4,9 +4,6 @@ views:
     cards:
       - type: vertical-stack
         cards:
-        - type: weather-forecast
-          entity: weather.ecobee
-          show_forecast: false
         - type: grid
           columns: 2
           square: false
@@ -95,6 +92,10 @@ views:
               show_icon: true
               show_name: false
             - type: button
+              entity: script.1629140590814
+              show_icon: true
+              show_name: false
+            - type: button
               entity: script.1544281377929
               show_icon: true
               show_name: false
@@ -102,10 +103,25 @@ views:
               entity: script.1593284495837
               show_icon: true
               show_name: false
-            - type: button
-              entity: script.1629140590814
-              show_icon: true
-              show_name: false
+        - type: custom:simple-thermostat
+          entity: climate.ecobee
+          header: false
+          hide:
+            temperature: true
+            state: true
+          layout:
+            mode:
+              names: false
+              headings: false
+              icons: true
+          control:
+            preset:
+              'Home':
+                icon: mdi:home-import-outline
+              'Away':
+                icon: mdi:home-export-outline
+              'Sleep':
+                icon: mdi:weather-night
 
       - type: vertical-stack
         cards:
@@ -148,7 +164,6 @@ views:
             hours_to_show: 24
             points_per_hour: 12
             line_width: 2
-            hour24: true
             height: 170
             state_map:
               - value: "Off"
@@ -158,6 +173,8 @@ views:
               - value: "Heating"
             lower_bound: 17
             upper_bound_secondary: 30
+            show:
+              labels: true
           - type: custom:mini-graph-card
             entities:
               - entity: sensor.living_room_humidity
@@ -180,52 +197,16 @@ views:
             hours_to_show: 24
             points_per_hour: 12
             line_width: 2
-            hour24: true
             height: 170
+            show:
+              labels: true
+              labels_secondary: true
 
       - type: vertical-stack
         cards:
-          - type: custom:simple-thermostat
-            entity: climate.ecobee
-            header: false
-            hide:
-              temperature: true
-              state: true
-            layout:
-              mode:
-                names: false
-                headings: false
-                icons: true
-            control:
-              preset:
-                'Home':
-                  icon: mdi:home-import-outline
-                'Away':
-                  icon: mdi:home-export-outline
-                'Sleep':
-                  icon: mdi:weather-night
-          - type: custom:mini-graph-card
-            entities:
-              - sensor.illumination_34ce00837eef
-            smoothing: false
-            hours_to_show: 24
-            points_per_hour: 12
-            hour24: true
-            line_width: 2
-            height: 160
-            color_thresholds:
-              - value: 0
-                color: "#786AAB"
-              - value: 200
-                color: "#DECB9C"
-              - value: 400
-                color: "#EEE0C5"
-              - value: 600
-                color: "#FEAB1D"
-              - value: 800
-                color: "#FF7D08"
-              - value: 1000
-                color: "#FD6400"
+          - type: weather-forecast
+            entity: weather.ecobee
+            show_forecast: false
           - type: custom:mini-graph-card
             entities:
               - entity: binary_sensor.motion_sensor_158d00015b8344
@@ -239,9 +220,53 @@ views:
             height: 20
             state_map:
               - value: "off"
-                label: "Clear"
               - value: "on"
-                label: "Alert"
+            show:
+              state: false
+          - type: custom:mini-graph-card
+            entities:
+              - entity: sensor.illumination_34ce00837eef
+                state_adaptive_color: true
+            smoothing: false
+            hours_to_show: 24
+            points_per_hour: 12
+            line_width: 2
+            height: 100
+            color_thresholds:
+              - value: 0
+                color: "#786AAB"
+              - value: 200
+                color: "#DECB9C"
+              - value: 400
+                color: "#EEE0C5"
+              - value: 600
+                color: "#FEAB1D"
+              - value: 800
+                color: "#FF7D08"
+              - value: 1000
+                color: "#FD6400"
+            show:
+              labels: true
+              labels_secondary: true
+          - type: custom:mini-graph-card
+            entities:
+              - entity: sensor.ups_energy
+                color: "#99d98c"
+                show_state: true
+                state_adaptive_color: true
+              - entity: sensor.koogeek_p1_6c79c0_energy
+                y_axis: secondary
+                color: "#168aad"
+                show_state: true
+                state_adaptive_color: true
+            name: Energy Usage
+            hours_to_show: 189 # 24 * 7 days
+            points_per_hour: 1
+            line_width: 2
+            height: 100
+            show:
+              labels: true
+              labels_secondary: true
 
   - title: Information
     icon: mdi:information
