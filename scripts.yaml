@@ -27,26 +27,6 @@
       - media_player.sony_bravia_tv
   mode: single
   icon: mdi:sony-playstation
-'1593284496702':
-  alias: 'Source: Apple TV'
-  sequence:
-  - service: homeassistant.update_entity
-    data: {}
-    target:
-      entity_id: media_player.sony_bravia_soundbar
-  - service: media_player.select_source
-    data:
-      source: HDMI2
-    target:
-      entity_id: media_player.sony_bravia_soundbar
-  - service: media_player.select_source
-    data:
-      source: Apple TV 4K
-    target:
-      entity_id:
-      - media_player.sony_bravia_tv
-  mode: single
-  icon: mdi:apple
 '1593284499481':
   alias: Leave Home
   sequence:
@@ -95,13 +75,13 @@
     target:
       entity_id: media_player.sony_bravia_soundbar
   - data:
-      source: TV
+      source: HDMI2
     service: media_player.select_source
     target:
       entity_id:
       - media_player.sony_bravia_soundbar
   - data:
-      source: HDMI 2
+      source: HDMI 3/ARC
     service: media_player.select_source
     target:
       entity_id: media_player.sony_bravia_tv
@@ -184,7 +164,7 @@
     target:
       entity_id: media_player.sony_bravia_tv
     data:
-      media_content_id: STN Beta
+      media_content_id: SmartTube Beta
       media_content_type: app
   mode: single
   icon: mdi:youtube

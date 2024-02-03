@@ -34,7 +34,7 @@
     data_template:
       command: '{% set key_map = {''arrow_right'': ''Right'', ''arrow_down'' : ''Down'',
         ''arrow_left'': ''Left'', ''arrow_up'': ''Up'',  ''select'': ''Confirm'',
-        ''back'': ''Return'', ''information'': ''Home''} %} {{ key_map[trigger.event.data[''key_name'']]
+        ''back'': ''Return'', ''information'': ''ActionMenu'', ''play_pause'': ''Pause''} %} {{ key_map[trigger.event.data[''key_name'']]
         }}'
   mode: single
 - id: '1676219292630'
