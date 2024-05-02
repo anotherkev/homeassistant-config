@@ -52,21 +52,3 @@ sensor:
         device_class: power
         value_template:  >
           {{ (states('sensor.ups_load') | float) / 100 * 330 }}
-
-panel_iframe:
-  adguardhome:
-    title: 'AdGuard Home'
-    url: !secret url_adguardhome
-    icon: 'mdi:shield-check'
-  nginx:
-    title: '404'
-    url: !secret url_nginx
-    icon: 'mdi:web'
-  goaccess:
-    title: 'GoAccess'
-    url: !secret url_goaccess
-    icon: 'mdi:google-analytics'
-  influxdb:
-    title: 'InfluxDB'
-    url: !secret url_influxdb
-    icon: 'mdi:database'

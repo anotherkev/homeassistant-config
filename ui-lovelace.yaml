@@ -90,11 +90,11 @@ views:
               icons: true
           control:
             preset:
-              'Home':
+              'home':
                 icon: mdi:home-import-outline
-              'Away':
+              'away':
                 icon: mdi:home-export-outline
-              'Sleep':
+              'sleep':
                 icon: mdi:weather-night
 
       - type: vertical-stack
@@ -295,7 +295,6 @@ views:
               - entity: sensor.speedtest_upload
               - entity: sensor.speedtest_ping
               - type: divider
-              - entity: sensor.cert_expiry_timestamp_anotherkev_com
               - entity: sensor.hacs_updater
 
       - type: vertical-stack
