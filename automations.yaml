@@ -13,11 +13,11 @@
       message: '{{ states(''sensor.hacs_updater'') }} {{ state_attr(''sensor.hacs_updater'',
         ''unit_of_measurement'') }}'
     enabled: false
-  - service: notify.ecobee
+  - service: notify.send_message
     data:
       message: '{{ states(''sensor.hacs_updater'') }} {{ state_attr(''sensor.hacs_updater'',
         ''unit_of_measurement'') }}'
-      target: 0
+      entity_id: notify.ecobee3_lite
   mode: single
 - id: '1675044848290'
   alias: 'Automation: HomeKit Remote'
@@ -84,10 +84,10 @@
       title: Synology Webhook
       message: '{{trigger.json.msg}}'
     enabled: false
-  - service: notify.ecobee
+  - service: notify.send_message
     data:
       message: '{{trigger.json.msg}}'
-      target: 0
+      entity_id: notify.ecobee3_lite
   mode: single
 - id: '1676825787825'
   alias: 'Automation: Button'
