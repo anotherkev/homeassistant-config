@@ -212,3 +212,26 @@
       transition: 1
   mode: single
   icon: mdi:heart-box-outline
+dance_scenes:
+  alias: Dance Scenes
+  sequence:
+  - data:
+      cycle: true
+    target:
+      entity_id:
+      - input_select.hue_scenes_dance
+    action: input_select.select_next
+  - data:
+      transition: 1
+    target:
+      entity_id: '{{ states(''input_select.hue_scenes_dance'') }}'
+    action: hue.activate_scene
+  - target:
+      entity_id: light.yeelight_lightstrip
+    data:
+      effect: Home
+      transition: 1
+    action: light.turn_on
+  mode: single
+  icon: mdi:dance-ballroom
+  description: ''

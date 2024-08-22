@@ -1,24 +1,3 @@
-- id: '1602474225975'
-  alias: 'Notification: HACS Update'
-  description: ''
-  trigger:
-  - platform: numeric_state
-    entity_id: sensor.hacs_updater
-    above: '0'
-  condition: []
-  action:
-  - service: notify.persistent_notification
-    data:
-      title: HACS Update
-      message: '{{ states(''sensor.hacs_updater'') }} {{ state_attr(''sensor.hacs_updater'',
-        ''unit_of_measurement'') }}'
-    enabled: false
-  - service: notify.send_message
-    data:
-      message: '{{ states(''sensor.hacs_updater'') }} {{ state_attr(''sensor.hacs_updater'',
-        ''unit_of_measurement'') }}'
-      entity_id: notify.ecobee3_lite
-  mode: single
 - id: '1675044848290'
   alias: 'Automation: HomeKit Remote'
   description: ''

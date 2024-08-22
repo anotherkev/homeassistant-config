@@ -9,14 +9,6 @@ views:
           square: false
           cards:
             - type: tile
-              entity: script.1684781465122
-              tap_action:
-                action: toggle
-            - type: tile
-              entity: script.1684781523698
-              tap_action:
-                action: toggle
-            - type: tile
               entity: script.1593284499412
               tap_action:
                 action: toggle
@@ -30,6 +22,22 @@ views:
                 action: toggle
             - type: tile
               entity: script.1593284499481
+              tap_action:
+                action: toggle
+        - type: grid
+          columns: 3
+          square: false
+          cards:
+            - type: tile
+              entity: script.1684781465122
+              tap_action:
+                action: toggle
+            - type: tile
+              entity: script.1684781523698
+              tap_action:
+                action: toggle
+            - type: tile
+              entity: script.dance_scenes
               tap_action:
                 action: toggle
         - type: entities
@@ -260,6 +268,10 @@ views:
               - entity: scene.studio_sundown
               - entity: scene.studio_fairfax
               - entity: scene.studio_soho
+              - type: divider
+              - entity: scene.studio_cancun
+              - entity: scene.studio_tokyo
+              - entity: scene.studio_tyrell
 
       - type: vertical-stack
         cards:
@@ -294,8 +306,6 @@ views:
               - entity: sensor.speedtest_download
               - entity: sensor.speedtest_upload
               - entity: sensor.speedtest_ping
-              - type: divider
-              - entity: sensor.hacs_updater
 
       - type: vertical-stack
         cards:
