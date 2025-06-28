@@ -8,83 +8,87 @@
   mode: single
   icon: mdi:thermostat
 '1593284468001':
-  alias: 'Source: PlayStation'
+  alias: Input ~ PlayStation
   sequence:
-  - service: homeassistant.update_entity
-    data: {}
+  - data: {}
     target:
       entity_id: media_player.sony_bravia_soundbar
+    action: homeassistant.update_entity
   - data:
       entity_id: media_player.sony_bravia_soundbar
       source: HDMI1
     entity_id: media_player.sony_bravia_soundbar
-    service: media_player.select_source
+    action: media_player.select_source
   - data:
-      source: PlayStation 5
-    service: media_player.select_source
+      source: HDMI 3/ARC
     target:
       entity_id:
       - media_player.sony_bravia_tv
+    action: media_player.select_source
   mode: single
   icon: mdi:sony-playstation
 '1593284499481':
   alias: Leave Home
   sequence:
-  - service: light.turn_off
-    target:
+  - target:
       area_id:
       - bedroom
       - entrance
       - living_room
+      - kitchen
     data:
       transition: 1
-  - service: climate.set_preset_mode
-    data:
+    action: light.turn_off
+  - data: {}
+    entity_id: media_player.sony_bravia_tv
+    action: media_player.turn_off
+  - data:
       preset_mode: away
     entity_id: climate.ecobee
-  - service: media_player.turn_off
-    data: {}
-    entity_id: media_player.sony_bravia_tv
+    action: climate.set_preset_mode
+    enabled: false
   mode: single
   icon: mdi:home-export-outline
 '1593284499449':
   alias: Good Night
   sequence:
-  - service: light.turn_off
-    target:
+  - target:
       area_id:
       - bedroom
       - entrance
       - living_room
+      - kitchen
     data:
       transition: 1
-  - service: climate.set_preset_mode
-    data:
+    action: light.turn_off
+  - data: {}
+    entity_id: media_player.sony_bravia_tv
+    action: media_player.turn_off
+  - data:
       preset_mode: sleep
     entity_id: climate.ecobee
-  - service: media_player.turn_off
-    data: {}
-    entity_id: media_player.sony_bravia_tv
+    action: climate.set_preset_mode
+    enabled: false
   mode: single
   icon: mdi:weather-night
 '1629140590814':
-  alias: 'Source: Nintendo Switch'
+  alias: Input ~ Nintendo Switch
   sequence:
-  - service: homeassistant.update_entity
-    data: {}
+  - data: {}
     target:
       entity_id: media_player.sony_bravia_soundbar
+    action: homeassistant.update_entity
   - data:
       source: HDMI2
-    service: media_player.select_source
     target:
       entity_id:
       - media_player.sony_bravia_soundbar
+    action: media_player.select_source
   - data:
       source: HDMI 3/ARC
-    service: media_player.select_source
     target:
       entity_id: media_player.sony_bravia_tv
+    action: media_player.select_source
   mode: single
   icon: mdi:nintendo-switch
 '1593284495837':
@@ -115,35 +119,71 @@
   - data: {}
     action: script.1684781465122
     enabled: true
-  - action: script.day_scenes_duplicate
+  - target:
+      entity_id: light.yeelight_lightstrip
+    data:
+      effect: Home
+    action: light.turn_on
+    enabled: true
+  - action: light.turn_on
+    metadata: {}
     data: {}
+    target:
+      device_id:
+      - df84b45ee5faaba915897d3361a850cc
+      - d3f26f7f0be0fdeba2be750cd044b45b
+      - 7c0f65b230f2a684ebb6ecc7714930be
+      - c9ecab2d6c2c6fe66cfa3f43ffa46bea
+      - 139c3ff3e4004896e472609e0a072063
     enabled: false
   - data:
       preset_mode: home
     entity_id: climate.ecobee
     action: climate.set_preset_mode
+    enabled: false
   mode: single
   icon: mdi:weather-sunset-up
 '1593284499385':
   alias: Arrive Home
   sequence:
-  - data: {}
-    action: script.1684781523698
-    enabled: true
-  - action: script.night_scenes_duplicate
-    data: {}
-    enabled: false
-  - data:
-      brightness_pct: 50
-      transition: 1
+  - if:
+    - condition: sun
+      before: sunrise
+      after: sunset
+    then:
+    - data: {}
+      action: script.1684781523698
+      enabled: true
+    - target:
+        entity_id: light.yeelight_lightstrip
+      data:
+        effect: Date Night
+      action: light.turn_on
+    else:
+    - action: script.1684781465122
+      data: {}
+    - target:
+        entity_id: light.yeelight_lightstrip
+      data:
+        effect: Home
+      action: light.turn_on
+  - action: light.turn_on
+    metadata: {}
+    data:
+      transition: 10
     target:
-      entity_id:
-      - light.hue_ambiance_lamp_2
-    action: light.turn_on
+      device_id:
+      - df84b45ee5faaba915897d3361a850cc
+      - d3f26f7f0be0fdeba2be750cd044b45b
+      - 7c0f65b230f2a684ebb6ecc7714930be
+      - c9ecab2d6c2c6fe66cfa3f43ffa46bea
+      - 139c3ff3e4004896e472609e0a072063
+    enabled: false
   - data:
       preset_mode: home
     entity_id: climate.ecobee
     action: climate.set_preset_mode
+    enabled: false
   mode: single
   icon: mdi:home-import-outline
 '1654281377953':
@@ -177,101 +217,50 @@
   mode: single
   icon: mdi:youtube
 '1684781465122':
-  alias: Day Scenes
+  alias: Hue ~ Day
   sequence:
-  - service: input_select.select_next
-    data:
+  - data:
       cycle: true
+    action: input_select.select_next
     target:
-      entity_id:
-      - input_select.hue_scenes_day
-  - service: hue.activate_scene
-    data:
+      entity_id: input_select.hue_scenes_chill
+  - data:
       transition: 1
     target:
-      entity_id: '{{ states(''input_select.hue_scenes_day'') }}'
-  - service: light.turn_on
-    target:
-      entity_id: light.yeelight_lightstrip
-    data:
-      effect: Home
-      transition: 1
+      entity_id: '{{ states(''input_select.hue_scenes_chill'') }}'
+    action: hue.activate_scene
   mode: single
   icon: mdi:ghost
 '1684781523698':
-  alias: Night Scenes
-  sequence:
-  - service: input_select.select_next
-    data:
-      cycle: true
-    target:
-      entity_id:
-      - input_select.hue_scenes_night
-  - service: hue.activate_scene
-    data:
-      transition: 1
-    target:
-      entity_id: '{{ states(''input_select.hue_scenes_night'') }}'
-  - service: light.turn_on
-    target:
-      entity_id: light.yeelight_lightstrip
-    data:
-      effect: Date Night
-      transition: 1
-  mode: single
-  icon: mdi:heart-box-outline
-dance_scenes:
-  alias: Dance Scenes
+  alias: Hue ~ Night
   sequence:
   - data:
       cycle: true
     target:
       entity_id:
-      - input_select.hue_scenes_dance
+      - input_select.hue_scenes_vibe
     action: input_select.select_next
   - data:
       transition: 1
     target:
-      entity_id: '{{ states(''input_select.hue_scenes_dance'') }}'
+      entity_id: '{{ states(''input_select.hue_scenes_vibe'') }}'
     action: hue.activate_scene
-  - target:
-      entity_id: light.yeelight_lightstrip
-    data:
-      effect: Home
+  mode: single
+  icon: mdi:heart-box-outline
+dance_scenes:
+  alias: Hue ~ Vibe
+  sequence:
+  - data:
+      cycle: true
+    target:
+      entity_id:
+      - input_select.hue_scenes_sleep
+    action: input_select.select_next
+  - data:
       transition: 1
-    action: light.turn_on
+    target:
+      entity_id: '{{ states(''input_select.hue_scenes_sleep'') }}'
+    action: hue.activate_scene
   mode: single
   icon: mdi:dance-ballroom
-  description: ''
-day_scenes_duplicate:
-  alias: Day Scenes (Duplicate)
-  sequence:
-  - target:
-      entity_id: light.yeelight_lightstrip
-    data:
-      transition: 1
-      effect: Home
-    action: light.turn_on
-  - action: scene.turn_on
-    metadata: {}
-    target:
-      entity_id: scene.studio_natural_light
-  mode: single
-  icon: mdi:ghost
-  description: ''
-night_scenes_duplicate:
-  alias: Night Scenes (Duplicate)
-  sequence:
-  - target:
-      entity_id: light.yeelight_lightstrip
-    data:
-      transition: 1
-      effect: Date Night
-    action: light.turn_on
-  - action: scene.turn_on
-    metadata: {}
-    target:
-      entity_id: scene.studio_new_scene
-  mode: single
-  icon: mdi:ghost
   description: ''
