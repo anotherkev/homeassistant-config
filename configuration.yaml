@@ -6,7 +6,7 @@ frontend:
   themes:
     !include_dir_merge_named themes
 lovelace:
-  mode: yaml
+  resource_mode: yaml
   resources:
     - url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
       type: module
@@ -16,6 +16,13 @@ lovelace:
       type: module
     - url: /hacsfiles/lovelace-mushroom/mushroom.js
       type: module
+  # dashboards:
+  #   lovelace:
+  #     mode: yaml
+  #     filename: ui-lovelace.yaml
+  #     title: Overview
+  #     icon: mdi:view-dashboard
+  #     show_in_sidebar: false
 
 influxdb:
   api_version: 2

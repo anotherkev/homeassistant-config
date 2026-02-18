@@ -7,11 +7,14 @@
 
 .cloud
 .storage
-backups
-image
+.ha_run.lock
 secrets.yaml
 
+backups
+image
 custom_components
+blueprints
 www/community
+
 themes/*
 !themes/non_hacs_themes

@@ -1,324 +1,324 @@
-views:
-  - title: Home
-    icon: mdi:home-circle
-    cards:
-      - type: vertical-stack
-        cards:
-        - type: grid
-          columns: 2
-          square: false
-          cards:
-            - type: tile
-              entity: script.1593284499412
-              tap_action:
-                action: toggle
-            - type: tile
-              entity: script.1593284499449
-              tap_action:
-                action: toggle
-            - type: tile
-              entity: script.1593284499385
-              tap_action:
-                action: toggle
-            - type: tile
-              entity: script.1593284499481
-              tap_action:
-                action: toggle
-        - type: grid
-          columns: 3
-          square: false
-          cards:
-            - type: tile
-              entity: script.1684781465122
-              tap_action:
-                action: toggle
-            - type: tile
-              entity: script.1684781523698
-              tap_action:
-                action: toggle
-            - type: tile
-              entity: script.dance_scenes
-              tap_action:
-                action: toggle
-        - type: entities
-          entities:
-          - type: custom:mini-media-player
-            entity: media_player.sony_bravia_tv
-            artwork: cover
-            source: icon
-            info: scroll
-            volume_stateless: true
-            group: true
-            idle_view:
-              when_idle: true
-              when_standby: true
-          - type: custom:mini-media-player
-            entity: media_player.sony_bravia_soundbar
-            artwork: cover
-            source: icon
-            info: scroll
-            toggle_power: false
-            volume_stateless: true
-            group: true
-            idle_view:
-              when_idle: true
-              when_standby: true
-            hide:
-              volume: true
-              controls: true
-          - entity: switch.koogeek_p1_6c79c0
-        - type: horizontal-stack
-          cards:
-            - type: button
-              entity: script.1593284468001
-              show_icon: true
-              show_name: false
-            - type: button
-              entity: script.1629140590814
-              show_icon: true
-              show_name: false
-            - type: button
-              entity: script.1544281377929
-              show_icon: true
-              show_name: false
-            - type: button
-              entity: script.1593284495837
-              show_icon: true
-              show_name: false
-        - type: custom:simple-thermostat
-          entity: climate.ecobee
-          header: false
-          hide:
-            temperature: true
-            state: true
-          layout:
-            mode:
-              names: false
-              headings: false
-              icons: true
-          control:
-            preset:
-              'home':
-                icon: mdi:home-import-outline
-              'away':
-                icon: mdi:home-export-outline
-              'sleep':
-                icon: mdi:weather-night
+# views:
+#   - title: Home
+#     icon: mdi:home-circle
+#     cards:
+#       - type: vertical-stack
+#         cards:
+#         - type: grid
+#           columns: 2
+#           square: false
+#           cards:
+#             - type: tile
+#               entity: script.1593284499412
+#               tap_action:
+#                 action: toggle
+#             - type: tile
+#               entity: script.1593284499449
+#               tap_action:
+#                 action: toggle
+#             - type: tile
+#               entity: script.1593284499385
+#               tap_action:
+#                 action: toggle
+#             - type: tile
+#               entity: script.1593284499481
+#               tap_action:
+#                 action: toggle
+#         - type: grid
+#           columns: 3
+#           square: false
+#           cards:
+#             - type: tile
+#               entity: script.1684781465122
+#               tap_action:
+#                 action: toggle
+#             - type: tile
+#               entity: script.1684781523698
+#               tap_action:
+#                 action: toggle
+#             - type: tile
+#               entity: script.dance_scenes
+#               tap_action:
+#                 action: toggle
+#         - type: entities
+#           entities:
+#           - type: custom:mini-media-player
+#             entity: media_player.sony_bravia_tv
+#             artwork: cover
+#             source: icon
+#             info: scroll
+#             volume_stateless: true
+#             group: true
+#             idle_view:
+#               when_idle: true
+#               when_standby: true
+#           - type: custom:mini-media-player
+#             entity: media_player.sony_bravia_soundbar
+#             artwork: cover
+#             source: icon
+#             info: scroll
+#             toggle_power: false
+#             volume_stateless: true
+#             group: true
+#             idle_view:
+#               when_idle: true
+#               when_standby: true
+#             hide:
+#               volume: true
+#               controls: true
+#           - entity: switch.koogeek_p1_6c79c0
+#         - type: horizontal-stack
+#           cards:
+#             - type: button
+#               entity: script.1593284468001
+#               show_icon: true
+#               show_name: false
+#             - type: button
+#               entity: script.1629140590814
+#               show_icon: true
+#               show_name: false
+#             - type: button
+#               entity: script.1544281377929
+#               show_icon: true
+#               show_name: false
+#             - type: button
+#               entity: script.1593284495837
+#               show_icon: true
+#               show_name: false
+#         - type: custom:simple-thermostat
+#           entity: climate.ecobee
+#           header: false
+#           hide:
+#             temperature: true
+#             state: true
+#           layout:
+#             mode:
+#               names: false
+#               headings: false
+#               icons: true
+#           control:
+#             preset:
+#               'home':
+#                 icon: mdi:home-import-outline
+#               'away':
+#                 icon: mdi:home-export-outline
+#               'sleep':
+#                 icon: mdi:weather-night
 
-      - type: vertical-stack
-        cards:
-          - type: custom:mini-graph-card
-            entities:
-              - entity: sensor.living_room_temperature
-                name: Living Room
-                show_state: true
-                state_adaptive_color: true
-                show_fill: false
-                color: "#fcb137"
-              - entity: sensor.temperature_158d0001a2b637
-                name: Bedroom
-                show_state: true
-                state_adaptive_color: true
-                show_fill: false
-              - entity: sensor.temperature_158d00015813fd
-                name: Entrance
-                show_state: true
-                state_adaptive_color: true
-                show_fill: false
-              - entity: sensor.target_temperature
-                name: Target
-                show_state: false
-                state_adaptive_color: true
-                show_fill: false
-              - entity: sensor.hvac_action
-                y_axis: secondary
-                name: HVAC
-                show_state: false
-                state_adaptive_color: true
-                show_fill: false
-              - entity: sensor.fan_action
-                y_axis: secondary
-                name: Fan
-                show_state: false
-                state_adaptive_color: true
-                show_fill: false
-            name: Temperature
-            hours_to_show: 24
-            points_per_hour: 12
-            line_width: 2
-            height: 170
-            state_map:
-              - value: "Off"
-              - value: "On"
-              - value: "Cooling"
-              - value: "Idle"
-              - value: "Heating"
-            lower_bound: 17
-            upper_bound_secondary: 30
-            show:
-              labels: true
-          - type: custom:mini-graph-card
-            entities:
-              - entity: sensor.living_room_humidity
-                name: Living Room
-                show_state: true
-                state_adaptive_color: true
-                show_fill: false
-                color: "#fcb137"
-              - entity: sensor.humidity_158d0001a2b637
-                name: Bedroom
-                show_state: true
-                state_adaptive_color: true
-                show_fill: false
-              - entity: sensor.humidity_158d00015813fd
-                name: Entrance
-                show_state: true
-                state_adaptive_color: true
-                show_fill: false
-            name: Humidity
-            hours_to_show: 24
-            points_per_hour: 12
-            line_width: 2
-            height: 170
-            show:
-              labels: true
-              labels_secondary: true
+#       - type: vertical-stack
+#         cards:
+#           - type: custom:mini-graph-card
+#             entities:
+#               - entity: sensor.living_room_temperature
+#                 name: Living Room
+#                 show_state: true
+#                 state_adaptive_color: true
+#                 show_fill: false
+#                 color: "#fcb137"
+#               - entity: sensor.temperature_158d0001a2b637
+#                 name: Bedroom
+#                 show_state: true
+#                 state_adaptive_color: true
+#                 show_fill: false
+#               - entity: sensor.temperature_158d00015813fd
+#                 name: Entrance
+#                 show_state: true
+#                 state_adaptive_color: true
+#                 show_fill: false
+#               - entity: sensor.target_temperature
+#                 name: Target
+#                 show_state: false
+#                 state_adaptive_color: true
+#                 show_fill: false
+#               - entity: sensor.hvac_action
+#                 y_axis: secondary
+#                 name: HVAC
+#                 show_state: false
+#                 state_adaptive_color: true
+#                 show_fill: false
+#               - entity: sensor.fan_action
+#                 y_axis: secondary
+#                 name: Fan
+#                 show_state: false
+#                 state_adaptive_color: true
+#                 show_fill: false
+#             name: Temperature
+#             hours_to_show: 24
+#             points_per_hour: 12
+#             line_width: 2
+#             height: 170
+#             state_map:
+#               - value: "Off"
+#               - value: "On"
+#               - value: "Cooling"
+#               - value: "Idle"
+#               - value: "Heating"
+#             lower_bound: 17
+#             upper_bound_secondary: 30
+#             show:
+#               labels: true
+#           - type: custom:mini-graph-card
+#             entities:
+#               - entity: sensor.living_room_humidity
+#                 name: Living Room
+#                 show_state: true
+#                 state_adaptive_color: true
+#                 show_fill: false
+#                 color: "#fcb137"
+#               - entity: sensor.humidity_158d0001a2b637
+#                 name: Bedroom
+#                 show_state: true
+#                 state_adaptive_color: true
+#                 show_fill: false
+#               - entity: sensor.humidity_158d00015813fd
+#                 name: Entrance
+#                 show_state: true
+#                 state_adaptive_color: true
+#                 show_fill: false
+#             name: Humidity
+#             hours_to_show: 24
+#             points_per_hour: 12
+#             line_width: 2
+#             height: 170
+#             show:
+#               labels: true
+#               labels_secondary: true
 
-      - type: vertical-stack
-        cards:
-          - type: weather-forecast
-            entity: weather.ecobee
-            show_forecast: false
-          - type: custom:mini-graph-card
-            entities:
-              - entity: binary_sensor.motion_sensor_158d00015b8344
-                color: "#fcb137"
-              - entity: binary_sensor.door_window_sensor_158d000125cd3f
-            name: Motion & Door
-            hours_to_show: 24
-            points_per_hour: 12
-            aggregate_func: max
-            line_width: 2
-            height: 20
-            state_map:
-              - value: "off"
-              - value: "on"
-            show:
-              state: false
-          - type: custom:mini-graph-card
-            entities:
-              - entity: sensor.illumination_34ce00837eef
-                state_adaptive_color: true
-            smoothing: false
-            hours_to_show: 24
-            points_per_hour: 12
-            line_width: 2
-            height: 100
-            color_thresholds:
-              - value: 0
-                color: "#786AAB"
-              - value: 200
-                color: "#DECB9C"
-              - value: 400
-                color: "#EEE0C5"
-              - value: 600
-                color: "#FEAB1D"
-              - value: 800
-                color: "#FF7D08"
-              - value: 1000
-                color: "#FD6400"
-            show:
-              labels: true
-              labels_secondary: true
-          - type: custom:mini-graph-card
-            entities:
-              - entity: sensor.ups_energy
-                color: "#99d98c"
-                show_state: true
-                state_adaptive_color: true
-              - entity: sensor.koogeek_p1_6c79c0_energy
-                y_axis: secondary
-                color: "#168aad"
-                show_state: true
-                state_adaptive_color: true
-            name: Energy Usage
-            hours_to_show: 189 # 24 * 7 days
-            points_per_hour: 1
-            line_width: 2
-            height: 100
-            show:
-              labels: true
-              labels_secondary: true
+#       - type: vertical-stack
+#         cards:
+#           - type: weather-forecast
+#             entity: weather.ecobee
+#             show_forecast: false
+#           - type: custom:mini-graph-card
+#             entities:
+#               - entity: binary_sensor.motion_sensor_158d00015b8344
+#                 color: "#fcb137"
+#               - entity: binary_sensor.door_window_sensor_158d000125cd3f
+#             name: Motion & Door
+#             hours_to_show: 24
+#             points_per_hour: 12
+#             aggregate_func: max
+#             line_width: 2
+#             height: 20
+#             state_map:
+#               - value: "off"
+#               - value: "on"
+#             show:
+#               state: false
+#           - type: custom:mini-graph-card
+#             entities:
+#               - entity: sensor.illumination_34ce00837eef
+#                 state_adaptive_color: true
+#             smoothing: false
+#             hours_to_show: 24
+#             points_per_hour: 12
+#             line_width: 2
+#             height: 100
+#             color_thresholds:
+#               - value: 0
+#                 color: "#786AAB"
+#               - value: 200
+#                 color: "#DECB9C"
+#               - value: 400
+#                 color: "#EEE0C5"
+#               - value: 600
+#                 color: "#FEAB1D"
+#               - value: 800
+#                 color: "#FF7D08"
+#               - value: 1000
+#                 color: "#FD6400"
+#             show:
+#               labels: true
+#               labels_secondary: true
+#           - type: custom:mini-graph-card
+#             entities:
+#               - entity: sensor.ups_energy
+#                 color: "#99d98c"
+#                 show_state: true
+#                 state_adaptive_color: true
+#               - entity: sensor.koogeek_p1_6c79c0_energy
+#                 y_axis: secondary
+#                 color: "#168aad"
+#                 show_state: true
+#                 state_adaptive_color: true
+#             name: Energy Usage
+#             hours_to_show: 189 # 24 * 7 days
+#             points_per_hour: 1
+#             line_width: 2
+#             height: 100
+#             show:
+#               labels: true
+#               labels_secondary: true
 
-  - title: Information
-    icon: mdi:information
-    cards:
-      - type: vertical-stack
-        cards:
-          - type: entities
-            entities:
-              - entity: script.1654281377953
-              - entity: script.1592682876227
-              - type: divider
-              - entity: scene.studio_amber_bloom
-              - entity: scene.studio_ocean_dawn
-              - entity: scene.studio_tropical_twilight
-              - type: divider
-              - entity: scene.studio_disturbia
-              - entity: scene.studio_sundown
-              - entity: scene.studio_fairfax
-              - entity: scene.studio_soho
-              - type: divider
-              - entity: scene.studio_cancun
-              - entity: scene.studio_tokyo
-              - entity: scene.studio_tyrell
+#   - title: Information
+#     icon: mdi:information
+#     cards:
+#       - type: vertical-stack
+#         cards:
+#           - type: entities
+#             entities:
+#               - entity: script.1654281377953
+#               - entity: script.1592682876227
+#               - type: divider
+#               - entity: scene.studio_amber_bloom
+#               - entity: scene.studio_ocean_dawn
+#               - entity: scene.studio_tropical_twilight
+#               - type: divider
+#               - entity: scene.studio_disturbia
+#               - entity: scene.studio_sundown
+#               - entity: scene.studio_fairfax
+#               - entity: scene.studio_soho
+#               - type: divider
+#               - entity: scene.studio_cancun
+#               - entity: scene.studio_tokyo
+#               - entity: scene.studio_tyrell
 
-      - type: vertical-stack
-        cards:
-          - type: entities
-            state_color: true
-            entities:
-              - entity: light.hue_signe_table_2
-              - entity: light.hue_signe_table_1
-              - entity: light.hue_play_2
-              - entity: light.hue_play_1
-              - type: divider
-              - entity: light.hue_ambiance_lamp_1
-              - entity: light.hue_ambiance_lamp_2
-              - type: divider
-              - entity: light.hue_color_lamp_1
-              - entity: light.hue_color_lamp_3
-              - entity: light.hue_color_lamp_2
-              - entity: light.yeelight_lightstrip
-              - type: divider
-              - entity: light.gateway_light_34ce00837eef
+#       - type: vertical-stack
+#         cards:
+#           - type: entities
+#             state_color: true
+#             entities:
+#               - entity: light.hue_signe_table_2
+#               - entity: light.hue_signe_table_1
+#               - entity: light.hue_play_2
+#               - entity: light.hue_play_1
+#               - type: divider
+#               - entity: light.hue_ambiance_lamp_1
+#               - entity: light.hue_ambiance_lamp_2
+#               - type: divider
+#               - entity: light.hue_color_lamp_1
+#               - entity: light.hue_color_lamp_3
+#               - entity: light.hue_color_lamp_2
+#               - entity: light.yeelight_lightstrip
+#               - type: divider
+#               - entity: light.gateway_light_34ce00837eef
 
-      - type: vertical-stack
-        cards:
-          - type: entities
-            state_color: true
-            entities:
-              - entity: switch.adguard_filtering
-              - entity: sensor.adguard_dns_queries
-              - entity: sensor.adguard_dns_queries_blocked_ratio
-              - entity: sensor.adguard_average_processing_speed
-              - type: divider
-              - entity: sensor.speedtest_download
-              - entity: sensor.speedtest_upload
-              - entity: sensor.speedtest_ping
+#       - type: vertical-stack
+#         cards:
+#           - type: entities
+#             state_color: true
+#             entities:
+#               - entity: switch.adguard_filtering
+#               - entity: sensor.adguard_dns_queries
+#               - entity: sensor.adguard_dns_queries_blocked_ratio
+#               - entity: sensor.adguard_average_processing_speed
+#               - type: divider
+#               - entity: sensor.speedtest_download
+#               - entity: sensor.speedtest_upload
+#               - entity: sensor.speedtest_ping
 
-      - type: vertical-stack
-        cards:
-          - type: entities
-            entities:
-              - entity: sensor.battery_158d0001839557
-              - entity: sensor.battery_158d000125cd3f
-              - entity: sensor.battery_158d00015b8344
-              - entity: sensor.battery_158d00015813fd
-              - entity: sensor.battery_158d0001a2b637
-              - type: divider
-              - entity: sensor.ups_battery_charge
-              - entity: sensor.ups_load
-              - type: divider
-              - entity: sensor.canon_ts3400_series_black
-              - entity: sensor.canon_ts3400_series_color
+#       - type: vertical-stack
+#         cards:
+#           - type: entities
+#             entities:
+#               - entity: sensor.battery_158d0001839557
+#               - entity: sensor.battery_158d000125cd3f
+#               - entity: sensor.battery_158d00015b8344
+#               - entity: sensor.battery_158d00015813fd
+#               - entity: sensor.battery_158d0001a2b637
+#               - type: divider
+#               - entity: sensor.ups_battery_charge
+#               - entity: sensor.ups_load
+#               - type: divider
+#               - entity: sensor.canon_ts3400_series_black
+#               - entity: sensor.canon_ts3400_series_color

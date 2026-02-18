@@ -58,12 +58,12 @@
   - data:
       title: Synology Webhook
       message: '{{trigger.json.msg}}'
-    enabled: false
+    enabled: true
     action: notify.persistent_notification
   - data:
       message: '{{trigger.json.msg}}'
       entity_id: notify.ecobee3_lite
-    enabled: true
+    enabled: false
     action: notify.send_message
   mode: single
 - id: '1676825787825'
@@ -95,7 +95,7 @@
         value_template: '{{ trigger.event.data[''click_type''] == ''long_click_press''
           }}'
       sequence:
-      - action: script.dance_scenes
+      - action: script.sleep_time
         data: {}
   mode: single
 - id: '1676827020196'
@@ -122,6 +122,10 @@
     then:
     - data:
         brightness_pct: 100
+        rgb_color:
+        - 255
+        - 207
+        - 121
       target:
         entity_id: light.hue_color_lamp_2
       action: light.turn_on
@@ -170,3 +174,195 @@
       entity_id: scene.pre_motion_light_state
     action: scene.turn_on
     data: {}
+- id: '1755986707318'
+  alias: Party ~ Track light pulse
+  triggers:
+  - entity_id: input_boolean.party_scene
+    to: 'on'
+    trigger: state
+  actions:
+  - data:
+      scene_id: pre_track_light_state
+      snapshot_entities: '{{ target_lights }}'
+    action: scene.create
+  - repeat:
+      until:
+      - condition: state
+        entity_id: input_boolean.party_scene
+        state: 'off'
+      sequence:
+      - variables:
+          new_hue: '{{ range(0, 360) | random }}'
+      - target:
+          entity_id: '{{ target_lights }}'
+        data:
+          hs_color:
+          - '{{ new_hue }}'
+          - 100
+          brightness: 254
+          transition: '{{ transition_time }}'
+        action: light.turn_on
+      - delay:
+          seconds: '{{ delay_time }}'
+      - target:
+          entity_id: '{{ target_lights }}'
+        data:
+          hs_color:
+          - '{{ new_hue }}'
+          - 100
+          brightness: 50
+          transition: '{{ transition_time / 2 }}'
+        action: light.turn_on
+      - delay:
+          seconds: '{{ delay_time / 2 }}'
+  - action: scene.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: scene.pre_track_light_state
+  variables:
+    transition_time: 2
+    delay_time: 3
+    target_lights:
+    - light.track_light
+  mode: restart
+- id: '1760666721422'
+  alias: Party ~ Party light
+  description: ''
+  use_blueprint:
+    path: Twanne/party_lights.yaml
+    input:
+      party_mode_trigger: input_boolean.party_scene
+      target_lights:
+      - light.hue_color_lamp_1
+      - light.hue_play_1
+      - light.hue_play_2
+      - light.hue_signe_table_1
+      - light.hue_color_lamp_2
+      - light.track_light
+      time_between_changes:
+        hours: 0
+        minutes: 0
+        seconds: 3
+        milliseconds: 0
+      transition_time: 2
+      color_mode: random
+      brightness_mode: random
+      fixed_brightness_pct: 40
+      max_brightness_pct: 100
+      input_sync_lights: false
+      min_brightness_pct: 60
+- id: '1760889044383'
+  alias: Party ~ Lightstrip strobe
+  description: ''
+  triggers:
+  - entity_id: input_boolean.party_scene
+    to: 'on'
+    trigger: state
+  actions:
+  - data:
+      scene_id: pre_yeelight_state
+      snapshot_entities: '{{ target_lights }}'
+    action: scene.create
+  - repeat:
+      until:
+      - condition: state
+        entity_id: input_boolean.party_scene
+        state: 'off'
+      sequence:
+      - repeat:
+          for_each: '{{ effects_list }}'
+          sequence:
+          - target:
+              entity_id: '{{ target_lights }}'
+            data:
+              effect: '{{ default_effect }}'
+            action: light.turn_on
+          - delay:
+              seconds: '{{ delay_time / 2 }}'
+          - target:
+              entity_id: '{{ target_lights }}'
+            data:
+              effect: '{{ repeat.item }}'
+            action: light.turn_on
+          - delay:
+              seconds: '{{ delay_time }}'
+  - target:
+      entity_id: scene.pre_yeelight_state
+    action: scene.turn_on
+  variables:
+    delay_time: 10
+    target_lights:
+    - light.yeelight_lightstrip
+    default_effect: Disco
+    effects_list:
+    - Strobe color
+    - Strobe epilepsy!
+  mode: restart
+- id: '1761443757203'
+  alias: Party ~ Party light 2
+  description: ''
+  triggers:
+  - entity_id: input_boolean.party_scene
+    to: 'on'
+    trigger: state
+  actions:
+  - data:
+      scene_id: pre_track_light_state
+      snapshot_entities: '{{ set_a + set_b }}'
+    action: scene.create
+  - repeat:
+      until:
+      - condition: state
+        entity_id: input_boolean.party_scene
+        state: 'off'
+      sequence:
+      - variables:
+          new_hue: '{{ range(0, 360) | random }}'
+      - target:
+          entity_id: '{{ set_a }}'
+        data:
+          hs_color:
+          - '{{ new_hue }}'
+          - 100
+          brightness: 255
+          transition: '{{ transition_time }}'
+        action: light.turn_on
+      - target:
+          entity_id: '{{ set_b }}'
+        data:
+          transition: '{{ transition_time }}'
+        action: light.turn_off
+      - delay:
+          seconds: '{{ delay_time / 2 }}'
+      - target:
+          entity_id: '{{ set_b }}'
+        data:
+          hs_color:
+          - '{{ new_hue }}'
+          - 100
+          brightness: 255
+          transition: '{{ transition_time }}'
+        action: light.turn_on
+      - target:
+          entity_id: '{{ set_a }}'
+        data:
+          transition: '{{ transition_time }}'
+        action: light.turn_off
+      - delay:
+          seconds: '{{ delay_time / 2 }}'
+  - target:
+      entity_id: scene.pre_track_light_state
+    action: scene.turn_on
+  variables:
+    transition_time: 0.5
+    delay_time: 4
+    set_a:
+    - light.track_light
+    - light.hue_color_lamp_2
+    set_b:
+    - light.hue_color_lamp_1
+    - light.hue_play_1
+    - light.hue_play_2
+    - light.hue_signe_table_1
+  mode: restart

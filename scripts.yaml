@@ -39,6 +39,10 @@
     data:
       transition: 1
     action: light.turn_off
+  - type: turn_off
+    device_id: ab4785ece1f362a8724887b4d5528265
+    entity_id: 27db95c872821ee90bec88a0eb88721c
+    domain: switch
   - data: {}
     entity_id: media_player.sony_bravia_tv
     action: media_player.turn_off
@@ -61,6 +65,10 @@
     data:
       transition: 1
     action: light.turn_off
+  - type: turn_off
+    device_id: ab4785ece1f362a8724887b4d5528265
+    entity_id: 27db95c872821ee90bec88a0eb88721c
+    domain: switch
   - data: {}
     entity_id: media_player.sony_bravia_tv
     action: media_player.turn_off
@@ -122,7 +130,7 @@
   - target:
       entity_id: light.yeelight_lightstrip
     data:
-      effect: Home
+      effect: Happy Birthday
     action: light.turn_on
     enabled: true
   - action: light.turn_on
@@ -159,13 +167,18 @@
       data:
         effect: Date Night
       action: light.turn_on
+    - action: light.turn_on
+      metadata: {}
+      data: {}
+      target:
+        entity_id: light.koogeek_p1_6c79c0_outlet
     else:
     - action: script.1684781465122
       data: {}
     - target:
         entity_id: light.yeelight_lightstrip
       data:
-        effect: Home
+        effect: Happy Birthday
       action: light.turn_on
   - action: light.turn_on
     metadata: {}
@@ -217,7 +230,7 @@
   mode: single
   icon: mdi:youtube
 '1684781465122':
-  alias: Hue ~ Day
+  alias: Day Time
   sequence:
   - data:
       cycle: true
@@ -231,8 +244,9 @@
     action: hue.activate_scene
   mode: single
   icon: mdi:ghost
+  description: ''
 '1684781523698':
-  alias: Hue ~ Night
+  alias: Night Time
   sequence:
   - data:
       cycle: true
@@ -247,8 +261,8 @@
     action: hue.activate_scene
   mode: single
   icon: mdi:heart-box-outline
-dance_scenes:
-  alias: Hue ~ Vibe
+  description: ''
+sleep_time:
   sequence:
   - data:
       cycle: true
@@ -261,6 +275,16 @@ dance_scenes:
     target:
       entity_id: '{{ states(''input_select.hue_scenes_sleep'') }}'
     action: hue.activate_scene
+  alias: Sleep Time
   mode: single
   icon: mdi:dance-ballroom
+  description: ''
+party_time:
+  sequence:
+  - action: input_boolean.toggle
+    metadata: {}
+    data: {}
+    target:
+      entity_id: input_boolean.party_scene
+  alias: Party Time
   description: ''
